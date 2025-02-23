@@ -58,12 +58,20 @@ export const LanguageSwitcher: React.FC = () => {
           English
         </DropdownMenuItem>
         <DropdownMenuItem
-          className={`${locale === "es" ? "bg-gray-100" : ""}`}
+          className={`${locale === "fr" ? "bg-gray-100" : ""}`}
           onClick={() => {
-            handleLocaleChange("es");
+            handleLocaleChange("fr");
           }}
         >
-          Spanish
+          French
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          className={`${locale === "ar" ? "bg-gray-100" : ""}`}
+          onClick={() => {
+            handleLocaleChange("ar");
+          }}
+        >
+          Arabic
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

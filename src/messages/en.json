@@ -1,9 +1,81 @@
 {
-  "HomePage": {
-    "title": "Hello world!",
-    "metadata": {
-      "title": "Hello world!",
-      "description": "This is a description of the page"
+  "nav": {
+    "home": "Home",
+    "beverages": "Beverages",
+    "food": "Food & Confectionery",
+    "contract": "Contract Manufacturing",
+    "manufacturing": "Manufacturing & Compliance",
+    "news": "News & Blogs",
+    "contact": "Contact Us",
+    "quote": "Get a Quote"
+  },
+  "home": {
+    "hero": {
+      "title": "Your Trusted Partner for Food & Beverage Manufacturing",
+      "description": "Leading contract manufacturer offering high-quality, internationally certified products to B2B clients worldwide.",
+      "cta": {
+        "quote": "Get a Quote",
+        "learn": "Learn More"
+      }
+    },
+    "features": {
+      "title": "Why Partner with BD Thai Food?",
+      "facility": {
+        "title": "State-of-the-art Facilities",
+        "description": "Modern production facilities ensuring highest quality standards"
+      },
+      "quality": {
+        "title": "Quality Assurance",
+        "description": "Strict quality control measures at every production stage"
+      },
+      "rd": {
+        "title": "R&D Excellence",
+        "description": "Custom formulation & product development"
+      },
+      "standards": {
+        "title": "Certified Standards",
+        "description": "International certifications ensuring premium quality"
+      }
+    }
+  },
+  "contract": {
+    "hero": {
+      "title": "OEM, Private Label & White-Label Solutions",
+      "description": "End-to-end contract manufacturing with seamless product development, regulatory approvals, and export logistics."
+    },
+    "services": {
+      "title": "Our Contract Manufacturing Services",
+      "oem": {
+        "title": "OEM Manufacturing",
+        "description": "We manufacture as per your specifications"
+      },
+      "private": {
+        "title": "Private Label",
+        "description": "We produce & package under your brand name"
+      },
+      "white": {
+        "title": "White Label",
+        "description": "Ready-to-market solutions with your branding"
+      }
+    },
+    "advantages": {
+      "title": "Key Advantages",
+      "moq": {
+        "title": "Flexible MOQs",
+        "description": "Competitive minimum order quantities & lead times"
+      },
+      "support": {
+        "title": "Full Support",
+        "description": "Product development, packaging, regulatory approvals"
+      },
+      "rd": {
+        "title": "Custom R&D",
+        "description": "Unique flavors and market-ready products"
+      },
+      "compliance": {
+        "title": "Global Standards",
+        "description": "HACCP, ISO 22000, BRC, Halal certified"
+      }
     }
   }
 }

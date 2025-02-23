@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "beverages": "Boissons",
+    "food": "Alimentation & Confiserie",
+    "contract": "Fabrication Sous-traitance",
+    "manufacturing": "Fabrication & Conformité",
+    "news": "Actualités & Blogs",
+    "contact": "Contactez-nous",
+    "quote": "Obtenir un Devis"
+  },
+  "home": {
+    "hero": {
+      "title": "Votre Partenaire de Confiance en Fabrication Alimentaire",
+      "description": "Fabricant sous contrat leader offrant des produits certifiés internationalement aux clients B2B du monde entier.",
+      "cta": {
+        "quote": "Obtenir un Devis",
+        "learn": "En Savoir Plus"
+      }
+    },
+    "features": {
+      "title": "Pourquoi Choisir BD Thai Food ?",
+      "facility": {
+        "title": "Installations de Pointe",
+        "description": "Installations modernes aux normes les plus élevées"
+      },
+      "quality": {
+        "title": "Assurance Qualité",
+        "description": "Contrôle qualité strict à chaque étape"
+      },
+      "rd": {
+        "title": "Excellence R&D",
+        "description": "Formulation et développement sur mesure"
+      },
+      "standards": {
+        "title": "Normes Certifiées",
+        "description": "Certifications internationales de qualité"
+      }
+    }
+  },
+  "contract": {
+    "hero": {
+      "title": "Solutions OEM, Marque Privée & Marque Blanche",
+      "description": "Fabrication sous contrat de bout en bout avec développement de produits, approbations réglementaires et logistique."
+    },
+    "services": {
+      "title": "Nos Services de Fabrication",
+      "oem": {
+        "title": "Fabrication OEM",
+        "description": "Fabrication selon vos spécifications"
+      },
+      "private": {
+        "title": "Marque Privée",
+        "description": "Production sous votre marque"
+      },
+      "white": {
+        "title": "Marque Blanche",
+        "description": "Solutions prêtes avec votre marque"
+      }
+    },
+    "advantages": {
+      "title": "Avantages Clés",
+      "moq": {
+        "title": "MOQ Flexibles",
+        "description": "Quantités minimales et délais compétitifs"
+      },
+      "support": {
+        "title": "Support Complet",
+        "description": "Développement, emballage, conformité"
+      },
+      "rd": {
+        "title": "R&D Personnalisée",
+        "description": "Saveurs uniques et produits prêts"
+      },
+      "compliance": {
+        "title": "Normes Mondiales",
+        "description": "HACCP, ISO 22000, BRC, Halal"
+      }
+    }
+  }
+}
