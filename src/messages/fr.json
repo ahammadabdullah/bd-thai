@@ -3,7 +3,7 @@
     "home": "Accueil",
     "beverages": "Boissons",
     "food": "Alimentation & Confiserie",
-    "contract": "Fabrication Sous-traitance",
+    "contract": "Fabrication sous Contrat",
     "manufacturing": "Fabrication & Conformité",
     "news": "Actualités & Blogs",
     "contact": "Contactez-nous",
@@ -11,71 +11,139 @@
   },
   "home": {
     "hero": {
-      "title": "Votre Partenaire de Confiance en Fabrication Alimentaire",
-      "description": "Fabricant sous contrat leader offrant des produits certifiés internationalement aux clients B2B du monde entier.",
+      "title": "Votre Partenaire de Confiance en Fabrication Agroalimentaire",
+      "description": "BD Thai Food & Beverage Ltd. est un fabricant leader offrant des produits hygiéniques, sûrs et conformes aux normes internationales. Nos installations de production modernes garantissent les normes de sécurité alimentaire les plus élevées tout en fournissant des produits innovants et de haute qualité à nos partenaires.",
       "cta": {
         "quote": "Obtenir un Devis",
-        "learn": "En Savoir Plus"
+        "learn": "En savoir plus"
       }
     },
     "features": {
       "title": "Pourquoi Choisir BD Thai Food ?",
-      "facility": {
-        "title": "Installations de Pointe",
-        "description": "Installations modernes aux normes les plus élevées"
+      "description": "Nous offrons une gamme de services et d'avantages qui font de nous le partenaire idéal pour vos besoins en fabrication alimentaire et de boissons.",
+      "compliance": {
+        "title": "Normes de Sécurité Alimentaire Globales",
+        "description": "Entièrement conforme aux réglementations de sécurité alimentaire mondiales"
       },
-      "quality": {
-        "title": "Assurance Qualité",
-        "description": "Contrôle qualité strict à chaque étape"
+      "support": {
+        "title": "Solutions Complètes OEM & Marque Privée",
+        "description": "Support complet pour la fabrication OEM, marque privée et marque blanche"
       },
-      "rd": {
-        "title": "Excellence R&D",
-        "description": "Formulation et développement sur mesure"
+      "rnd": {
+        "title": "R&D de Pointe",
+        "description": "Laboratoire moderne pour la formulation personnalisée et le développement de produits"
       },
-      "standards": {
-        "title": "Normes Certifiées",
-        "description": "Certifications internationales de qualité"
+      "sustainability": {
+        "title": "Emballage Écologique",
+        "description": "Production durable de préformes rPET pour un avenir plus vert"
+      },
+      "trust": {
+        "title": "Partenaire de Confiance à l'International",
+        "description": "Assurer la conformité réglementaire et une logistique d'exportation fluide"
       }
     }
   },
   "contract": {
     "hero": {
       "title": "Solutions OEM, Marque Privée & Marque Blanche",
-      "description": "Fabrication sous contrat de bout en bout avec développement de produits, approbations réglementaires et logistique."
+      "description": "Fabrication sous contrat complète avec développement de produits, approbations réglementaires et logistique d'exportation."
     },
     "services": {
-      "title": "Nos Services de Fabrication",
+      "title": "Nos Services de Fabrication sous Contrat",
       "oem": {
         "title": "Fabrication OEM",
-        "description": "Fabrication selon vos spécifications"
+        "description": "Nous fabriquons selon vos spécifications"
       },
       "private": {
         "title": "Marque Privée",
-        "description": "Production sous votre marque"
+        "description": "Nous produisons et emballons sous votre marque"
       },
       "white": {
         "title": "Marque Blanche",
-        "description": "Solutions prêtes avec votre marque"
+        "description": "Solutions prêtes à être commercialisées avec votre branding"
       }
     },
     "advantages": {
-      "title": "Avantages Clés",
+      "title": "Principaux Avantages",
       "moq": {
-        "title": "MOQ Flexibles",
-        "description": "Quantités minimales et délais compétitifs"
+        "title": "Quantités Minimes Flexibles",
+        "description": "Quantités minimales de commande compétitives et délais de livraison optimaux"
       },
       "support": {
         "title": "Support Complet",
-        "description": "Développement, emballage, conformité"
+        "description": "Développement de produits, emballage, approbations réglementaires"
       },
       "rd": {
         "title": "R&D Personnalisée",
-        "description": "Saveurs uniques et produits prêts"
+        "description": "Saveurs uniques et produits prêts pour le marché"
       },
       "compliance": {
-        "title": "Normes Mondiales",
-        "description": "HACCP, ISO 22000, BRC, Halal"
+        "title": "Normes Globales",
+        "description": "Certifié HACCP, ISO 22000, BRC, Halal"
       }
     }
+  },
+  "form": {
+    "title": "Demande d'Information",
+    "description": "Remplissez le formulaire ci-dessous et nous vous répondrons rapidement.",
+    "fields": {
+      "name": {
+        "label": "Nom",
+        "placeholder": "Votre nom complet",
+        "required": "Le nom est requis"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "votre@email.com",
+        "required": "L'email est requis",
+        "invalid": "L'email est invalide"
+      },
+      "company": {
+        "label": "Nom de l'Entreprise",
+        "placeholder": "Nom de votre entreprise",
+        "required": "Le nom de l'entreprise est requis"
+      },
+      "product": {
+        "label": "Produit d'Intérêt",
+        "placeholder": "Sélectionnez un produit",
+        "required": "Le produit est requis",
+        "options": {
+          "beverage": "Boissons",
+          "food": "Produits Alimentaires",
+          "manufacturing": "Fabrication sous Contrat",
+          "other": "Autres"
+        }
+      },
+      "order": {
+        "label": "Volume Estimé de Commande",
+        "placeholder": "ex: 1000 unités",
+        "required": "La quantité est requise"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Veuillez fournir des détails sur votre demande",
+        "required": "Le message est requis"
+      }
+    },
+    "submit": "Envoyer la demande"
+  },
+  "footer": {
+    "company": "BD Thai Food",
+    "companyDescription": "Votre partenaire de confiance dans la fabrication d'aliments et de boissons, fournissant des produits de qualité à l'échelle mondiale.",
+    "quickLinks": "Liens rapides",
+    "links": {
+      "home": "Accueil",
+      "about": "À propos de nous",
+      "products": "Produits",
+      "contact": "Contact"
+    },
+    "contact": "Contact",
+    "address": "123 Quartier d'affaires, Dhaka, Bangladesh",
+    "phone": "+880 123 456 789",
+    "email": "info@bdthaifood.com",
+    "newsletter": "Bulletin",
+    "newsletterDescription": "Abonnez-vous à notre bulletin pour des mises à jour et des analyses du secteur.",
+    "subscribe": "S'abonner",
+    "copyright": "© {year} BD Thai Food & Beverage Ltd. Tous droits réservés."
   }
 }

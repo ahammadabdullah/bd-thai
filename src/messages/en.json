@@ -82,5 +82,69 @@
         "description": "HACCP, ISO 22000, BRC, Halal certified"
       }
     }
+  },
+  "form": {
+    "title": "Inquiry",
+    "description": "Fill out the form below and we'll get back to you shortly.",
+    "fields": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Your full name",
+        "required": "Name is required"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "your@email.com",
+        "required": "Email is required",
+        "invalid": "Email is invalid"
+      },
+      "company": {
+        "label": "Company Name",
+        "placeholder": "Your company name",
+        "required": "Company is required"
+      },
+      "product": {
+        "label": "Product Interest",
+        "placeholder": "Select a product",
+        "required": "Product is required",
+        "options": {
+          "beverage": "Beverages",
+          "food": "Food Products",
+          "manufacturing": "Contract Manufacturing",
+          "other": "Others"
+        }
+      },
+      "order": {
+        "label": "Estimated Order Volume",
+        "placeholder": "e.g., 1000 units",
+        "required": "Quantity is required"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Please provide details about your inquiry",
+        "required": "Message is required"
+      }
+    },
+    "submit": "Submit Inquiry"
+  },
+
+  "footer": {
+    "company": "BD Thai Food",
+    "companyDescription": "Your trusted partner in food & beverage manufacturing, delivering quality products globally.",
+    "quickLinks": "Quick Links",
+    "links": {
+      "home": "Home",
+      "about": "About Us",
+      "products": "Products",
+      "contact": "Contact"
+    },
+    "contact": "Contact",
+    "address": "123 Business District, Dhaka, Bangladesh",
+    "phone": "+880 123 456 789",
+    "email": "info@bdthaifood.com",
+    "newsletter": "Newsletter",
+    "newsletterDescription": "Subscribe to our newsletter for updates and industry insights.",
+    "subscribe": "Subscribe",
+    "copyright": "© {year} BD Thai Food & Beverage Ltd. All rights reserved."
   }
 }

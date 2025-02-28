@@ -1,7 +1,15 @@
 "use server";
 
-import { formSchema } from "@/components/form/inquiry-form";
+import { z } from "zod";
 
+const formSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters."),
+  email: z.string().email("Please enter a valid email address."),
+  companyName: z.string().min(2, "Company name must be at least 2 characters."),
+  productInterest: z.string().min(1, "Please select a product interest."),
+  estimatedVolume: z.string().min(1, "Please enter estimated order volume."),
+  message: z.string().min(10, "Message must be at least 10 characters."),
+});
 export async function submitInquiry(_: any, formData: FormData) {
   const validatedFields = formSchema.safeParse({
     name: formData.get("name"),
@@ -15,12 +23,12 @@ export async function submitInquiry(_: any, formData: FormData) {
   if (!validatedFields.success) {
     return {
       errors: validatedFields.error.flatten().fieldErrors,
-      message:
-        "There were errors with your submission. Please correct them and try again.",
+      message: "Please fix the errors below.",
     };
   }
 
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  // console log the validated fields
+  console.log(validatedFields.data);
 
   return {
     message: "Thank you for your inquiry. We'll get back to you soon!",
