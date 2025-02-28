@@ -4,6 +4,7 @@ import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import { Navbar } from "@/components/Navbar/navbar";
+import InquiryForm from "@/components/form/inquiry-form";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +38,7 @@ export default async function RootLayout({
             <Navbar />
             <main className="flex-1">{children}</main>
             {/* <Footer  /> */}
+            <InquiryForm />
           </div>
         </NextIntlClientProvider>
       </body>

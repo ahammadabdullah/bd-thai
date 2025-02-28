@@ -11,8 +11,8 @@
   },
   "home": {
     "hero": {
-      "title": "Your Trusted Partner for Food & Beverage Manufacturing",
-      "description": "Leading contract manufacturer offering high-quality, internationally certified products to B2B clients worldwide.",
+      "title": "Your Trusted Partner in Food & Beverage Manufacturing",
+      "description": "BD Thai Food & Beverage Ltd. is a leading food & beverage manufacturer offering hygienic, safe, and internationally compliant products tailored for global markets. Our state-of-the-art production facilities ensure the highest food safety standards while delivering innovative and high-quality products to our partners.",
       "cta": {
         "quote": "Get a Quote",
         "learn": "Learn More"
@@ -20,21 +20,26 @@
     },
     "features": {
       "title": "Why Partner with BD Thai Food?",
-      "facility": {
-        "title": "State-of-the-art Facilities",
-        "description": "Modern production facilities ensuring highest quality standards"
+      "description": "We offer a range of services and advantages that make us the ideal partner for your food & beverage manufacturing needs.",
+      "compliance": {
+        "title": "Global Food Safety Standards",
+        "description": "Fully compliant with global food safety regulations"
       },
-      "quality": {
-        "title": "Quality Assurance",
-        "description": "Strict quality control measures at every production stage"
+      "support": {
+        "title": "Comprehensive OEM & Private Label Solutions",
+        "description": "End-to-end support for OEM, private label, & white-label manufacturing"
       },
-      "rd": {
-        "title": "R&D Excellence",
-        "description": "Custom formulation & product development"
+      "rnd": {
+        "title": "Cutting-Edge R&D",
+        "description": "State-of-the-art lab for custom formulation & product development"
       },
-      "standards": {
-        "title": "Certified Standards",
-        "description": "International certifications ensuring premium quality"
+      "sustainability": {
+        "title": "Eco-Friendly Packaging",
+        "description": "Sustainable rPET preform production for a greener future"
+      },
+      "trust": {
+        "title": "Trusted Global Partner",
+        "description": "Ensuring regulatory compliance & seamless export logistics"
       }
     }
   },
