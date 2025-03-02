@@ -41,7 +41,7 @@ export default function InquiryForm() {
   const t = useTranslations("form");
 
   return (
-    <div className="p-6">
+    <section className="p-6" id="inquiry-form">
       <div className="max-w-5xl mx-auto">
         <div className="space-y-6">
           <div className="space-y-2 text-center">
@@ -167,6 +167,6 @@ export default function InquiryForm() {
           </form>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

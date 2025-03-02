@@ -83,6 +83,12 @@
       }
     }
   },
+  "beverages": {
+    "hero": {
+      "title": "Refreshing, Safe & Standardized Beverage Solutions",
+      "description": "Our beverage division specializes in Carbonated Soft Drinks (CSD) & Ultra-High Temperature (UHT) Drinks, manufactured in a hygienic environment with strict compliance to food safety regulations."
+    }
+  },
   "form": {
     "title": "Inquiry",
     "description": "Fill out the form below and we'll get back to you shortly.",

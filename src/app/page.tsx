@@ -1,3 +1,4 @@
+import Hero from "@/components/common/hero";
 import { Button } from "@/components/ui/button";
 import {
   CheckCircle,
@@ -43,30 +44,11 @@ export default function Home({}) {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center">
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1513828742140-ccaa28f3eda0?ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80"
-            alt="Factory Production Line"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
-        <div className="relative z-10 text-center text-white px-6">
-          <h1 className="text-5xl font-bold mb-6">{t("hero.title")}</h1>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            {t("hero.description")}
-          </p>
-          <div className="flex gap-4 justify-center">
-            <Button size="lg" variant="default">
-              {t("hero.cta.quote")}
-            </Button>
-          </div>
-        </div>
-      </section>
-
+      <Hero
+        title={t("hero.title")}
+        subtitle={t("hero.description")}
+        image="https://images.unsplash.com/photo-1513828742140-ccaa28f3eda0?ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80"
+      />
       {/* Features Section */}
 
       <section className="py-24 bg-white">
