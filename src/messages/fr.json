@@ -45,8 +45,8 @@
   },
   "contract": {
     "hero": {
-      "title": "Solutions OEM, Marque Privée & Marque Blanche",
-      "description": "Fabrication sous contrat complète avec développement de produits, approbations réglementaires et logistique d'exportation."
+      "title": "Solutions OEM, Marque de Distributeur et Marque Blanche",
+      "description": "BD Thai Food & Beverage Ltd. offre une fabrication sous contrat complète, garantissant un développement de produit fluide, des approbations réglementaires, de l'image de marque et une logistique d'exportation."
     },
     "services": {
       "title": "Nos Services de Fabrication sous Contrat",
@@ -55,23 +55,23 @@
         "description": "Nous fabriquons selon vos spécifications"
       },
       "private": {
-        "title": "Marque Privée",
+        "title": "Marque de Distributeur",
         "description": "Nous produisons et emballons sous votre marque"
       },
       "white": {
         "title": "Marque Blanche",
-        "description": "Solutions prêtes à être commercialisées avec votre branding"
+        "description": "Solutions prêtes à la vente avec votre marque"
       }
     },
     "advantages": {
-      "title": "Principaux Avantages",
+      "title": "Avantages Clés",
       "moq": {
-        "title": "Quantités Minimes Flexibles",
-        "description": "Quantités minimales de commande compétitives et délais de livraison optimaux"
+        "title": "MOQs Flexibles",
+        "description": "Quantités minimales compétitives et délais courts"
       },
       "support": {
         "title": "Support Complet",
-        "description": "Développement de produits, emballage, approbations réglementaires"
+        "description": "Développement de produit, emballage, approbations réglementaires"
       },
       "rd": {
         "title": "R&D Personnalisée",
@@ -79,8 +79,26 @@
       },
       "compliance": {
         "title": "Normes Globales",
-        "description": "Certifié HACCP, ISO 22000, BRC, Halal"
+        "description": "Certifications HACCP, ISO 22000, BRC, Halal"
       }
+    }
+  },
+  "beverages": {
+    "hero": {
+      "title": "Solutions de Boissons Rafraîchissantes, Sûres et Standardisées",
+      "description": "Notre division boissons est spécialisée dans les boissons gazeuses (CSD) et les boissons UHT, fabriquées dans un environnement hygiénique avec une conformité stricte aux réglementations de sécurité alimentaire."
+    }
+  },
+  "food": {
+    "hero": {
+      "title": "Délicieux, Hygiénique et de Qualité Assurée",
+      "description": "Nous produisons une large gamme de produits de boulangerie et de confiserie, en respectant des normes strictes de sécurité alimentaire et des standards internationaux."
+    }
+  },
+  "manufacturing": {
+    "hero": {
+      "title": "Installations de Pointe, Durabilité et Normes Globales",
+      "description": "BD Thai Food & Beverage Ltd. exploite des unités de fabrication à la pointe de la technologie, intégrant automatisation, hygiène et conformité à chaque étape."
     }
   },
   "form": {

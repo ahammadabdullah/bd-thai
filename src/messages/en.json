@@ -46,7 +46,7 @@
   "contract": {
     "hero": {
       "title": "OEM, Private Label & White-Label Solutions",
-      "description": "End-to-end contract manufacturing with seamless product development, regulatory approvals, and export logistics."
+      "description": "BD Thai Food & Beverage Ltd. provides end-to-end contract manufacturing, ensuring seamless product development, regulatory approvals, branding, and export logistics."
     },
     "services": {
       "title": "Our Contract Manufacturing Services",
@@ -87,6 +87,18 @@
     "hero": {
       "title": "Refreshing, Safe & Standardized Beverage Solutions",
       "description": "Our beverage division specializes in Carbonated Soft Drinks (CSD) & Ultra-High Temperature (UHT) Drinks, manufactured in a hygienic environment with strict compliance to food safety regulations."
+    }
+  },
+  "food": {
+    "hero": {
+      "title": "Delicious, Hygienic & Quality-Assured",
+      "description": "We produce a diverse range of baked goods and confectionery, adhering to strict food safety regulations and international standards."
+    }
+  },
+  "manufacturing": {
+    "hero": {
+      "title": "State-of-the-Art Facilities, Sustainability & Global Standards",
+      "description": "BD Thai Food & Beverage Ltd. operates cutting-edge manufacturing units, integrating automation, hygiene, and compliance into every process."
     }
   },
   "form": {

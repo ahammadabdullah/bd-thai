@@ -15,7 +15,7 @@ const SmoothScrollLink: React.FC<SmoothScrollLinkProps> = ({
     e.preventDefault();
     const target = document.querySelector(href);
     if (target) {
-      const yOffset = -100; // Adjust this value as needed
+      const yOffset = -100;
       const y = target.getBoundingClientRect().top + window.scrollY + yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });
     }
