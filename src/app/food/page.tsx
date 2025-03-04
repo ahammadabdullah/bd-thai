@@ -1,10 +1,11 @@
 import Hero from "@/components/common/hero";
 import { useTranslations } from "next-intl";
 import React from "react";
-import { ShieldCheck, Award, PackageCheck, Utensils } from "lucide-react";
+// import { ShieldCheck, Award, PackageCheck, Utensils } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SmoothScrollLink from "@/components/common/scroll";
 import Products from "./_components/Products";
+import { CustomSolutionsSection } from "./_components/custom-solution";
 
 const FoodPage = () => {
   const t = useTranslations("food");
@@ -19,7 +20,7 @@ const FoodPage = () => {
       {/* Product Range */}
       <Products />
       {/* Custom Solutions */}
-      <section className="py-24">
+      {/* <section className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-16">
             Custom Solutions
@@ -52,10 +53,10 @@ const FoodPage = () => {
             ))}
           </div>
         </div>
-      </section>
-
+      </section> */}
+      <CustomSolutionsSection />
       {/* Features */}
-      <section className="py-24">
+      {/* <section className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-16">
             Quality Standards
@@ -94,7 +95,7 @@ const FoodPage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-24 bg-primary text-white">

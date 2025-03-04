@@ -116,6 +116,21 @@
         "title": "Hard Candies",
         "subtitle": " Classic, long-lasting flavors with customizable formulations."
       }
+    },
+    "custom": {
+      "title": "Custom Solutions",
+      "natural": {
+        "title": "Natural Colors & Flavors",
+        "description": "We use high-quality natural ingredients for authentic taste and appearance"
+      },
+      "perfect": {
+        "title": "Perfect Texture & Shelf-Life",
+        "description": "Optimized formulations for the perfect texture and extended shelf life"
+      },
+      "custom": {
+        "title": "Custom Formulation & Flavor Matching",
+        "description": "We can match your existing flavors or develop entirely new ones"
+      }
     }
   },
   "manufacturing": {
