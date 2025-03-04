@@ -93,6 +93,29 @@
     "hero": {
       "title": "Delicious, Hygienic & Quality-Assured",
       "description": "We produce a diverse range of baked goods and confectionery, adhering to strict food safety regulations and international standards."
+    },
+    "products": {
+      "title": "Our Product Range",
+      "biscuits": {
+        "title": "Biscuits & Cookies",
+        "subtitle": "Crunchy, premium-quality flavors."
+      },
+      "cakes": {
+        "title": "Cakes",
+        "subtitle": "Moist, soft, and available in custom recipes."
+      },
+      "lollipops": {
+        "title": "Lollipops",
+        "subtitle": "Made in a controlled environment with strict quality standards."
+      },
+      "gummies": {
+        "title": "Gummies & Soft Candies",
+        "subtitle": "Using natural colors & flavors."
+      },
+      "candies": {
+        "title": "Hard Candies",
+        "subtitle": " Classic, long-lasting flavors with customizable formulations."
+      }
     }
   },
   "manufacturing": {

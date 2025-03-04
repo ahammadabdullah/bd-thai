@@ -93,6 +93,29 @@
     "hero": {
       "title": "Délicieux, Hygiénique et de Qualité Assurée",
       "description": "Nous produisons une large gamme de produits de boulangerie et de confiserie, en respectant des normes strictes de sécurité alimentaire et des standards internationaux."
+    },
+    "products": {
+      "title": "Notre Gamme de Produits",
+      "biscuits": {
+        "title": "Biscuits & Cookies",
+        "subtitle": "Saveurs croquantes et de qualité premium."
+      },
+      "cakes": {
+        "title": "Gâteaux",
+        "subtitle": "Moelleux, tendres et disponibles en recettes personnalisées."
+      },
+      "lollipops": {
+        "title": "Sucettes",
+        "subtitle": "Fabriquées dans un environnement contrôlé avec des normes de qualité strictes."
+      },
+      "gummies": {
+        "title": "Gummies & Bonbons Moelleux",
+        "subtitle": "Utilisant des couleurs et arômes naturels."
+      },
+      "candies": {
+        "title": "Bonbons Durs",
+        "subtitle": "Saveurs classiques et durables avec des formulations personnalisables."
+      }
     }
   },
   "manufacturing": {
