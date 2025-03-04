@@ -20,40 +20,7 @@ const FoodPage = () => {
       {/* Product Range */}
       <Products />
       {/* Custom Solutions */}
-      {/* <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-16">
-            Custom Solutions
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Natural Colors & Flavors",
-                description:
-                  "We use high-quality natural ingredients for authentic taste and appearance",
-              },
-              {
-                title: "Perfect Texture & Shelf-Life",
-                description:
-                  "Optimized formulations for the perfect texture and extended shelf life",
-              },
-              {
-                title: "Custom Formulation & Flavor Matching",
-                description:
-                  "We can match your existing flavors or develop entirely new ones",
-              },
-            ].map((solution, index) => (
-              <div
-                key={index}
-                className="text-center p-6 rounded-lg bg-white shadow-lg"
-              >
-                <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
-                <p className="text-gray-600">{solution.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
+
       <CustomSolutionsSection />
       {/* Features */}
       {/* <section className="py-24">

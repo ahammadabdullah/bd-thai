@@ -87,6 +87,25 @@
     "hero": {
       "title": "Solutions de Boissons Rafraîchissantes, Sûres et Standardisées",
       "description": "Notre division boissons est spécialisée dans les boissons gazeuses (CSD) et les boissons UHT, fabriquées dans un environnement hygiénique avec une conformité stricte aux réglementations de sécurité alimentaire."
+    },
+    "capabilities": {
+      "title": "Nos Capacités en Boissons",
+      "csd": {
+        "title": "CSD (Boissons Gazeuses)",
+        "subtitle": "Carbonatation parfaite avec des saveurs personnalisées"
+      },
+      "uht": {
+        "title": "Boissons UHT",
+        "subtitle": "Sûres, longue conservation, options laitières et non laitières"
+      },
+      "custom": {
+        "title": "Formulation Personnalisée",
+        "subtitle": "Arômes et couleurs naturels, boissons énergétiques, boissons enrichies en vitamines"
+      },
+      "sustainable": {
+        "title": "Emballage Durable",
+        "subtitle": "Production interne de préformes rPET pour des bouteilles écologiques"
+      }
     }
   },
   "food": {
@@ -115,6 +134,21 @@
       "candies": {
         "title": "Bonbons Durs",
         "subtitle": "Saveurs classiques et durables avec des formulations personnalisables."
+      }
+    },
+    "custom": {
+      "title": "Solutions Personnalisées",
+      "natural": {
+        "title": "Couleurs et Arômes Naturels",
+        "description": "Nous utilisons des ingrédients naturels de haute qualité pour un goût et une apparence authentiques."
+      },
+      "perfect": {
+        "title": "Texture Parfaite et Durée de Conservation",
+        "description": "Formulations optimisées pour une texture parfaite et une durée de conservation prolongée."
+      },
+      "custom": {
+        "title": "Formulation Personnalisée & Correspondance des Saveurs",
+        "description": "Nous pouvons reproduire vos saveurs existantes ou en développer entièrement de nouvelles."
       }
     }
   },
