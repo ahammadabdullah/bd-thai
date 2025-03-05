@@ -1,0 +1,103 @@
+import Image from "next/image";
+
+export function CertificationsCompliance() {
+  const certifications = [
+    {
+      name: "HACCP",
+      description: "Hazard Analysis & Critical Control Points (Food Safety)",
+      logo: "/haccp.webp?height=80&width=80",
+    },
+    {
+      name: "ISO 22000",
+      description: "International Food Safety Management Standard",
+      logo: "/iso.png?height=80&width=80",
+    },
+    {
+      name: "BRC Global Standard",
+      description: "Food Safety for International Retail",
+      logo: "/brc.png?height=80&width=80",
+    },
+    {
+      name: "Halal Certification",
+      description: "Compliance with global Halal food standards",
+      logo: "/halal.webp?height=80&width=80",
+    },
+    {
+      name: "FDA Compliance",
+      description: "Meets US food safety & export requirements",
+      logo: "/fda.jpg?height=80&width=80",
+    },
+  ];
+
+  return (
+    <section className="py-16 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="mb-12 text-center">
+          <div className="inline-flex items-center px-4 py-2 rounded-lg bg-primary/10 text-primary mb-4">
+            <span className="text-sm font-semibold">Quality Assurance</span>
+          </div>
+          <h2 className="text-3xl font-bold mb-4">
+            Certifications & Compliance
+          </h2>
+          <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Our facilities maintain the highest standards of quality and safety,
+            certified by leading international organizations.
+          </p>
+        </div>
+
+        <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden">
+          <div className="grid md:grid-cols-5 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+            {certifications.map((cert, index) => (
+              <div
+                key={index}
+                className="p-6 flex flex-col items-center text-center hover:bg-gray-50 transition-colors duration-300"
+              >
+                <div className="w-20 h-20 relative mb-4">
+                  <Image
+                    src={cert.logo || "/placeholder.svg"}
+                    alt={cert.name}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <h3 className="font-bold text-lg mb-2">{cert.name}</h3>
+                <p className="text-sm text-gray-600">{cert.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-12 bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden p-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="md:w-1/2">
+              <h3 className="text-xl font-bold mb-4">
+                Our Commitment to Quality
+              </h3>
+              <p className="text-gray-600 mb-4">
+                We maintain rigorous quality control processes throughout our
+                manufacturing facilities, ensuring every product meets the
+                highest standards of safety and quality.
+              </p>
+            </div>
+            <div className="md:w-1/2 grid grid-cols-3 gap-4">
+              {[1, 2, 3].map((img) => (
+                <div
+                  key={img}
+                  className="aspect-square relative rounded-lg overflow-hidden border border-gray-100"
+                >
+                  <Image
+                    src={`/placeholder.svg?height=200&width=200`}
+                    alt="Facility image"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
