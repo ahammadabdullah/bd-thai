@@ -4,29 +4,31 @@ import {
   FileCheck,
   FlaskRoundIcon as Flask,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function ManufacturingCapabilities() {
+  const t = useTranslations("manufacturing.capabilities");
   const capabilities = [
     {
-      title: "Advanced food safety & quality control systems",
+      title: t("advance"),
       icon: ShieldCheck,
       color: "bg-blue-50",
       iconColor: "text-blue-600",
     },
     {
-      title: "Sustainable rPET preform production for eco-friendly packaging",
+      title: t("sustainable"),
       icon: Leaf,
       color: "bg-green-50",
       iconColor: "text-green-600",
     },
     {
-      title: "Strict regulatory compliance & international certifications",
+      title: t("strict"),
       icon: FileCheck,
       color: "bg-amber-50",
       iconColor: "text-amber-600",
     },
     {
-      title: "Custom product development & private label manufacturing",
+      title: t("custom"),
       icon: Flask,
       color: "bg-purple-50",
       iconColor: "text-purple-600",
@@ -40,17 +42,10 @@ export function ManufacturingCapabilities() {
           <div className="md:w-1/3">
             <div className="sticky top-24">
               <div className="inline-flex items-center px-4 py-2 rounded-lg bg-primary/10 text-primary mb-4">
-                <span className="text-sm font-semibold">
-                  Manufacturing Excellence
-                </span>
+                <span className="text-sm font-semibold">{t("badge")}</span>
               </div>
-              <h2 className="text-3xl font-bold mb-6">
-                Key Manufacturing Capabilities
-              </h2>
-              <p className="text-gray-600 mb-6">
-                Our state-of-the-art facilities and rigorous processes ensure
-                consistent quality and compliance with international standards.
-              </p>
+              <h2 className="text-3xl font-bold mb-6">{t("title")}</h2>
+              <p className="text-gray-600 mb-6">{t("description")}</p>
               <div className="hidden md:block mt-8">
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -58,7 +53,7 @@ export function ManufacturingCapabilities() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Years of</p>
-                    <p className="font-semibold">Manufacturing Excellence</p>
+                    <p className="font-semibold">{t("badge")} </p>
                   </div>
                 </div>
               </div>

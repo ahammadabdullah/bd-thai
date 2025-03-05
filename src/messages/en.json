@@ -158,6 +158,44 @@
     "hero": {
       "title": "State-of-the-Art Facilities, Sustainability & Global Standards",
       "description": "BD Thai Food & Beverage Ltd. operates cutting-edge manufacturing units, integrating automation, hygiene, and compliance into every process."
+    },
+    "capabilities": {
+      "title": "Key Manufacturing Capabilities",
+      "badge": "Manufacturing Excellence",
+      "description": "Our state-of-the-art facilities and rigorous processes ensure consistent quality and compliance with international standards.",
+      "advance": "Advanced food safety & quality control systems",
+      "sustainable": "Sustainable rPET preform production for eco-friendly packaging",
+      "strict": "Strict regulatory compliance & international certifications",
+      "custom": "Custom product development & private label manufacturing"
+    },
+    "certifications": {
+      "title": "Certifications & Compliance",
+      "description": "Our facilities maintain the highest standards of quality and safety, certified by leading international organizations.",
+      "badge": "Quality Assurance",
+      "iso": {
+        "title": "ISO 22000",
+        "description": "International Food Safety Management Standard"
+      },
+      "haccp": {
+        "title": "HACCP",
+        "description": "Hazard Analysis & Critical Control Points (Food Safety)"
+      },
+      "brc": {
+        "title": "BRC Global Standard",
+        "description": "Food Safety for International Retail"
+      },
+      "halal": {
+        "title": "Halal Certification",
+        "description": "Compliance with global Halal food standards"
+      },
+      "fda": {
+        "title": "FDA Compliance",
+        "description": "Meets US food safety & export requirements"
+      },
+      "quality": {
+        "title": "Our Commitment to Quality",
+        "description": "We maintain rigorous quality control processes throughout our manufacturing facilities, ensuring every product meets the highest standards of safety and quality."
+      }
     }
   },
   "form": {

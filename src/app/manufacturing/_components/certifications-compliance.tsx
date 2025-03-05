@@ -1,30 +1,32 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 export function CertificationsCompliance() {
+  const t = useTranslations("manufacturing.certifications");
   const certifications = [
     {
-      name: "HACCP",
-      description: "Hazard Analysis & Critical Control Points (Food Safety)",
+      name: t("haccp.title"),
+      description: t("haccp.description"),
       logo: "/haccp.webp?height=80&width=80",
     },
     {
-      name: "ISO 22000",
-      description: "International Food Safety Management Standard",
+      name: t("iso.title"),
+      description: t("iso.description"),
       logo: "/iso.png?height=80&width=80",
     },
     {
-      name: "BRC Global Standard",
-      description: "Food Safety for International Retail",
+      name: t("brc.title"),
+      description: t("brc.description"),
       logo: "/brc.png?height=80&width=80",
     },
     {
-      name: "Halal Certification",
-      description: "Compliance with global Halal food standards",
+      name: t("halal.title"),
+      description: t("halal.description"),
       logo: "/halal.webp?height=80&width=80",
     },
     {
-      name: "FDA Compliance",
-      description: "Meets US food safety & export requirements",
+      name: t("fda.title"),
+      description: t("fda.description"),
       logo: "/fda.jpg?height=80&width=80",
     },
   ];
@@ -34,16 +36,11 @@ export function CertificationsCompliance() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-12 text-center">
           <div className="inline-flex items-center px-4 py-2 rounded-lg bg-primary/10 text-primary mb-4">
-            <span className="text-sm font-semibold">Quality Assurance</span>
+            <span className="text-sm font-semibold">{t("badge")}</span>
           </div>
-          <h2 className="text-3xl font-bold mb-4">
-            Certifications & Compliance
-          </h2>
+          <h2 className="text-3xl font-bold mb-4">{t("title")}</h2>
           <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Our facilities maintain the highest standards of quality and safety,
-            certified by leading international organizations.
-          </p>
+          <p className="text-gray-600 max-w-2xl mx-auto">{t("description")}</p>
         </div>
 
         <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden">
@@ -71,14 +68,8 @@ export function CertificationsCompliance() {
         <div className="mt-12 bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden p-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="md:w-1/2">
-              <h3 className="text-xl font-bold mb-4">
-                Our Commitment to Quality
-              </h3>
-              <p className="text-gray-600 mb-4">
-                We maintain rigorous quality control processes throughout our
-                manufacturing facilities, ensuring every product meets the
-                highest standards of safety and quality.
-              </p>
+              <h3 className="text-xl font-bold mb-4">{t("quality.title")}</h3>
+              <p className="text-gray-600 mb-4">{t("quality.description")}</p>
             </div>
             <div className="md:w-1/2 grid grid-cols-3 gap-4">
               {[1, 2, 3].map((img) => (

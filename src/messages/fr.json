@@ -156,8 +156,46 @@
   },
   "manufacturing": {
     "hero": {
-      "title": "Installations de Pointe, Durabilité et Normes Globales",
-      "description": "BD Thai Food & Beverage Ltd. exploite des unités de fabrication à la pointe de la technologie, intégrant automatisation, hygiène et conformité à chaque étape."
+      "title": "Installations de pointe, durabilité et normes mondiales",
+      "description": "BD Thai Food & Beverage Ltd. exploite des unités de fabrication de pointe, intégrant l'automatisation, l'hygiène et la conformité à chaque processus."
+    },
+    "capabilities": {
+      "title": "Principales capacités de fabrication",
+      "badge": "Excellence en fabrication",
+      "description": "Nos installations de pointe et nos processus rigoureux garantissent une qualité constante et la conformité aux normes internationales.",
+      "advance": "Systèmes avancés de sécurité alimentaire et de contrôle de la qualité",
+      "sustainable": "Production durable de préformes rPET pour un emballage écologique",
+      "strict": "Conformité réglementaire stricte et certifications internationales",
+      "custom": "Développement de produits personnalisés et fabrication sous marque privée"
+    },
+    "certifications": {
+      "title": "Certifications et conformité",
+      "description": "Nos installations maintiennent les normes les plus élevées en matière de qualité et de sécurité, certifiées par des organisations internationales reconnues.",
+      "badge": "Assurance qualité",
+      "iso": {
+        "title": "ISO 22000",
+        "description": "Norme internationale de gestion de la sécurité alimentaire"
+      },
+      "haccp": {
+        "title": "HACCP",
+        "description": "Analyse des dangers et points critiques pour leur maîtrise (Sécurité alimentaire)"
+      },
+      "brc": {
+        "title": "Norme mondiale BRC",
+        "description": "Sécurité alimentaire pour la distribution internationale"
+      },
+      "halal": {
+        "title": "Certification Halal",
+        "description": "Conformité aux normes alimentaires Halal mondiales"
+      },
+      "fda": {
+        "title": "Conformité FDA",
+        "description": "Respecte les exigences américaines en matière de sécurité alimentaire et d'exportation"
+      },
+      "quality": {
+        "title": "Notre engagement envers la qualité",
+        "description": "Nous maintenons des processus rigoureux de contrôle de la qualité dans toutes nos installations de fabrication, garantissant que chaque produit répond aux normes les plus élevées en matière de sécurité et de qualité."
+      }
     }
   },
   "form": {
