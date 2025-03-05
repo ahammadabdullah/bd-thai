@@ -1,20 +1,22 @@
 import { Factory, Package, Tag } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function ContractManufacturingServices() {
+  const t = useTranslations("contract.services");
   const services = [
     {
-      title: "OEM (Original Equipment Manufacturer)",
-      description: "We manufacture as per your specifications.",
+      title: t("oem.title"),
+      description: t("oem.description"),
       icon: Factory,
     },
     {
-      title: "Private Label Manufacturing",
-      description: "We produce & package under your brand name.",
+      title: t("private.title"),
+      description: t("private.description"),
       icon: Tag,
     },
     {
-      title: "White-Label Manufacturing",
-      description: "Ready-to-market solutions with your branding.",
+      title: t("white.title"),
+      description: t("white.description"),
       icon: Package,
     },
   ];
@@ -23,9 +25,7 @@ export function ContractManufacturingServices() {
     <section className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16 text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Our Contract Manufacturing Services
-          </h2>
+          <h2 className="text-3xl font-bold mb-4">{t("title")}</h2>
           <div className="w-24 h-1 bg-primary mx-auto"></div>
         </div>
 

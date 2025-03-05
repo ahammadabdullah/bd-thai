@@ -65,22 +65,24 @@
     },
     "advantages": {
       "title": "Key Advantages",
+      "description": "Partner with BD Thai Food & Beverage Ltd. for reliable, high-quality contract manufacturing services.",
       "moq": {
-        "title": "Flexible MOQs",
-        "description": "Competitive minimum order quantities & lead times"
+        "title": " Minimum Order Quantities (MOQs) & Competitive Lead Times",
+        "description": "Designed for large-scale buyers."
       },
       "support": {
-        "title": "Full Support",
-        "description": "Product development, packaging, regulatory approvals"
+        "title": "Full-Service Support",
+        "description": "We handle product development, packaging, regulatory approvals, and export logistics."
       },
       "rd": {
-        "title": "Custom R&D",
-        "description": "Unique flavors and market-ready products"
+        "title": "Custom Formulation & R&D",
+        "description": "Develop unique flavors, health-focused ingredients, and market-ready products."
       },
       "compliance": {
-        "title": "Global Standards",
-        "description": "HACCP, ISO 22000, BRC, Halal certified"
-      }
+        "title": "Regulatory Compliance & Certifications",
+        "description": "We ensure compliance with HACCP, ISO 22000, BRC, Halal, FDA, and other global standards."
+      },
+      "facilities": "Our Facilities & Products"
     }
   },
   "beverages": {

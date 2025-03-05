@@ -45,8 +45,8 @@
   },
   "contract": {
     "hero": {
-      "title": "Solutions OEM, Marque de Distributeur et Marque Blanche",
-      "description": "BD Thai Food & Beverage Ltd. offre une fabrication sous contrat complète, garantissant un développement de produit fluide, des approbations réglementaires, de l'image de marque et une logistique d'exportation."
+      "title": "Solutions OEM, Marque Privée & Marque Blanche",
+      "description": "BD Thai Food & Beverage Ltd. offre une fabrication sous contrat de bout en bout, garantissant un développement de produit sans faille, des approbations réglementaires, du branding et de la logistique d'exportation."
     },
     "services": {
       "title": "Nos Services de Fabrication sous Contrat",
@@ -55,32 +55,34 @@
         "description": "Nous fabriquons selon vos spécifications"
       },
       "private": {
-        "title": "Marque de Distributeur",
+        "title": "Marque Privée",
         "description": "Nous produisons et emballons sous votre marque"
       },
       "white": {
         "title": "Marque Blanche",
-        "description": "Solutions prêtes à la vente avec votre marque"
+        "description": "Solutions prêtes à être commercialisées avec votre branding"
       }
     },
     "advantages": {
-      "title": "Avantages Clés",
+      "title": "Principaux Avantages",
+      "description": "Collaborez avec BD Thai Food & Beverage Ltd. pour des services de fabrication sous contrat fiables et de haute qualité.",
       "moq": {
-        "title": "MOQs Flexibles",
-        "description": "Quantités minimales compétitives et délais courts"
+        "title": "Quantités Minimales de Commande (MOQs) & Délais Compétitifs",
+        "description": "Conçu pour les acheteurs en gros."
       },
       "support": {
         "title": "Support Complet",
-        "description": "Développement de produit, emballage, approbations réglementaires"
+        "description": "Nous prenons en charge le développement du produit, l'emballage, les approbations réglementaires et la logistique d'exportation."
       },
       "rd": {
-        "title": "R&D Personnalisée",
-        "description": "Saveurs uniques et produits prêts pour le marché"
+        "title": "Formulation Personnalisée & R&D",
+        "description": "Développez des saveurs uniques, des ingrédients axés sur la santé et des produits prêts pour le marché."
       },
       "compliance": {
-        "title": "Normes Globales",
-        "description": "Certifications HACCP, ISO 22000, BRC, Halal"
-      }
+        "title": "Conformité Réglementaire & Certifications",
+        "description": "Nous garantissons la conformité aux normes HACCP, ISO 22000, BRC, Halal, FDA et autres standards internationaux."
+      },
+      "facilities": "Nos Installations & Produits"
     }
   },
   "beverages": {
