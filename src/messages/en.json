@@ -198,6 +198,24 @@
       }
     }
   },
+  "news": {
+    "hero": {
+      "title": "Latest Achievements & Industry Insights",
+      "description": "Stay updated with our latest product launches, industry trends, and company milestones. We also publish newsletters for our B2B partners to keep them informed about new product innovations, regulatory updates, and manufacturing advancements."
+    },
+    "articles": {
+      "title": "Latest Updates",
+      "read": "Read More"
+    },
+    "newsletter": {
+      "title": "Stay Updated",
+      "description": "Subscribe to our newsletter for the latest industry insights and company updates.",
+      "form": {
+        "email": "Enter your email",
+        "subscribe": "Subscribe"
+      }
+    }
+  },
   "form": {
     "title": "Inquiry",
     "description": "Fill out the form below and we'll get back to you shortly.",

@@ -15,6 +15,7 @@ import {
 import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "./language-switcher";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import SmoothScrollLink from "../common/scroll";
 // import { useEffect } from "react";
 
 export function Navbar() {
@@ -115,8 +116,9 @@ export function Navbar() {
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
           <LanguageSwitcher />
-
-          <Button>{t("quote")}</Button>
+          <SmoothScrollLink href="#inquiry-form">
+            <Button>{t("quote")}</Button>
+          </SmoothScrollLink>
         </div>
       </nav>
     </header>

@@ -198,6 +198,24 @@
       }
     }
   },
+  "news": {
+    "hero": {
+      "title": "Dernières réalisations et perspectives du secteur",
+      "description": "Restez informé de nos derniers lancements de produits, des tendances du secteur et des étapes clés de notre entreprise. Nous publions également des newsletters pour nos partenaires B2B afin de les tenir informés des innovations en matière de produits, des mises à jour réglementaires et des avancées en fabrication."
+    },
+    "articles": {
+      "title": "Dernières mises à jour",
+      "read": "Lire la suite"
+    },
+    "newsletter": {
+      "title": "Restez informé",
+      "description": "Abonnez-vous à notre newsletter pour recevoir les dernières analyses du secteur et les mises à jour de l'entreprise.",
+      "form": {
+        "email": "Entrez votre email",
+        "subscribe": "S'abonner"
+      }
+    }
+  },
   "form": {
     "title": "Demande d'Information",
     "description": "Remplissez le formulaire ci-dessous et nous vous répondrons rapidement.",
