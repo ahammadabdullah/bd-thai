@@ -205,7 +205,9 @@
     },
     "articles": {
       "title": "Dernières mises à jour",
-      "read": "Lire la suite"
+      "read": "Lire la suite",
+      "related": "Articles connexes",
+      "back": "Retour aux Actualités"
     },
     "newsletter": {
       "title": "Restez informé",
