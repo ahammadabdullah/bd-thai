@@ -11,20 +11,23 @@ const LatestsPosts = () => {
       title: "New Sustainable Packaging Initiative",
       date: "March 15, 2024",
       author: "BD Thai Food Team",
-      excerpt: "Introducing our new eco-friendly packaging solutions...",
+      description:
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
     {
       title: "Expanding Global Reach",
 
       date: "March 10, 2024",
       author: "Marketing Team",
-      excerpt: "BD Thai Food enters new international markets...",
+      description:
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
     {
       title: "Innovation in Beverage Technology",
       date: "March 5, 2024",
       author: "R&D Department",
-      excerpt: "Breakthrough in natural preservation methods...",
+      description:
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
   ];
   return (
@@ -59,7 +62,9 @@ const LatestsPosts = () => {
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
-                <p className="text-gray-600 mb-4">{post.excerpt}</p>
+                <p className="text-gray-600 mb-4 line-clamp-2">
+                  {post.description} ...
+                </p>
                 <Button variant="outline" className="group">
                   {t("articles.read")}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
