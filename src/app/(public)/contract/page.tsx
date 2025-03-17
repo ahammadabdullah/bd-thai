@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import React from "react";
 import { ContractManufacturingServices } from "./_components/contract-manufacturing-services";
 import { ManufacturingAdvantages } from "./_components/manufacturing-advantages";
+import { ProcessSteps } from "./_components/process-steps";
 
 const ContractPage = () => {
   const t = useTranslations("contract");
@@ -14,6 +15,7 @@ const ContractPage = () => {
         image="https://images.unsplash.com/photo-1513828742140-ccaa28f3eda0?ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80"
         button={t("hero.cta")}
       />
+      <ProcessSteps />
       <ContractManufacturingServices />
       <ManufacturingAdvantages />
     </div>

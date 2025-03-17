@@ -49,6 +49,32 @@
       "description": "BD Thai Food & Beverage Ltd. provides end-to-end contract manufacturing, ensuring seamless product development, regulatory approvals, branding, and export logistics.",
       "cta": "Start your Private Label Project Today"
     },
+    "process": {
+      "title": "Our Process",
+      "subtitle": "From concept to delivery, we provide a comprehensive end-to-end solution for your food and beverage manufacturing needs.",
+      "steps": [
+        {
+          "title": "Consultation",
+          "description": "Discuss your needs & market goals."
+        },
+        {
+          "title": "R&D & Customization",
+          "description": "Develop flavors & formulations."
+        },
+        {
+          "title": "Packaging & Branding",
+          "description": "Work with our in-house design experts."
+        },
+        {
+          "title": "Manufacturing & Quality Control",
+          "description": "Mass production with strict standards."
+        },
+        {
+          "title": "Compliance & Logistics",
+          "description": "We handle export approvals & delivery."
+        }
+      ]
+    },
     "services": {
       "title": "Our Contract Manufacturing Services",
       "oem": {

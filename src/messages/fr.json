@@ -49,6 +49,32 @@
       "description": "BD Thai Food & Beverage Ltd. offre une fabrication sous contrat de bout en bout, garantissant un développement de produit sans faille, des approbations réglementaires, du branding et de la logistique d'exportation.",
       "cta": "Démarrez votre projet de marque privée aujourd'hui"
     },
+    "process": {
+      "title": "Notre Processus",
+      "subtitle": "De la conception à la livraison, nous offrons une solution complète de bout en bout pour vos besoins en fabrication de produits alimentaires et de boissons.",
+      "steps": [
+        {
+          "title": "Consultation",
+          "description": "Discutez de vos besoins et objectifs de marché."
+        },
+        {
+          "title": "R&D et Personnalisation",
+          "description": "Développez des saveurs et des formulations."
+        },
+        {
+          "title": "Emballage et Image de Marque",
+          "description": "Travaillez avec nos experts en design interne."
+        },
+        {
+          "title": "Fabrication et Contrôle Qualité",
+          "description": "Production en masse avec des normes strictes."
+        },
+        {
+          "title": "Conformité et Logistique",
+          "description": "Nous gérons les approbations d'exportation et la livraison."
+        }
+      ]
+    },
     "services": {
       "title": "Nos Services de Fabrication sous Contrat",
       "oem": {
