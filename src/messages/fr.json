@@ -135,6 +135,94 @@
         "title": "Emballage Durable",
         "subtitle": "Production interne de préformes rPET pour des bouteilles écologiques"
       }
+    },
+    "why": {
+      "title": "Pourquoi choisir BD Thai Food pour la fabrication de boissons?",
+      "benefits": [
+        {
+          "title": "Support OEM & Marque Privée de A à Z",
+          "description": "De la R&D à l'emballage, nous nous occupons de tout."
+        },
+        {
+          "title": "Traitement de pointe",
+          "description": "Embouteillage avancé et stérilisation pour maintenir la fraîcheur."
+        },
+        {
+          "title": "Conformité mondiale",
+          "description": "Certifié HACCP, ISO 22000, BRC, FDA et Halal."
+        },
+        {
+          "title": "Fabrication de préformes rPET",
+          "description": "Solutions d'emballage durables et de haute qualité."
+        },
+        {
+          "title": "Formulations personnalisées",
+          "description": "Développez vos propres saveurs, sans sucre, enrichies en vitamines ou fonctionnelles."
+        }
+      ],
+      "categories": [
+        {
+          "title": "Boissons gazeuses (CSD)",
+          "subtitle": "Pétillant et rafraîchissant",
+          "description": "BD Thai Food produit une large gamme de boissons gazeuses, avec des niveaux de carbonatation personnalisés et des options de saveurs naturelles pour répondre aux exigences du marché mondial.",
+          "details": [
+            {
+              "label": "Saveurs populaires",
+              "value": "Cola, Citron-Lime, Orange, Raisin, Baie mélangée, Fruit tropical"
+            },
+            {
+              "label": "Formulations personnalisées",
+              "value": "Sans sucre, Enrichi en vitamines, Variantes énergisantes"
+            },
+            {
+              "label": "Options d'emballage",
+              "value": "Bouteilles rPET et PET (250 ml - 1,5 L)"
+            },
+            {
+              "label": "Idéal pour",
+              "value": "Vente au détail, Grossistes, Marque de distributeur, Distributeurs, Supermarchés"
+            }
+          ]
+        },
+        {
+          "title": "Boissons UHT (Ultra-Haute Température)",
+          "subtitle": "Longue durée de conservation, fraîcheur maximale",
+          "description": "Notre technologie de boisson UHT permet des boissons sûres et stables sans réfrigération, idéales pour la distribution mondiale.",
+          "details": [
+            {
+              "label": "À base de lait",
+              "value": "Lait aromatisé, Crème, Boissons protéinées"
+            },
+            {
+              "label": "Alternatives à base de plantes",
+              "value": "Lait d'amande, de soja, d'avoine, de coco"
+            },
+            {
+              "label": "Jus et boissons fonctionnelles",
+              "value": "Jus enrichis en vitamines, Infusions d'herbes, Boissons électrolytiques"
+            }
+          ]
+        },
+        {
+          "title": "R&D et formulation de boissons personnalisées",
+          "subtitle": "Innover avec nous",
+          "description": "Vous cherchez à créer une nouvelle boisson révolutionnaire ? Notre équipe de R&D interne collabore avec les clients pour développer des formulations personnalisées basées sur les tendances des consommateurs et les demandes du marché.",
+          "details": [
+            {
+              "label": "Saveurs et couleurs naturelles",
+              "value": "Pas d'additifs artificiels, solutions clean-label"
+            },
+            {
+              "label": "Ingrédients fonctionnels et bénéfiques pour la santé",
+              "value": "Collagène, électrolytes, probiotiques"
+            },
+            {
+              "label": "Carbonatation et niveaux de douceur personnalisés",
+              "value": "Ajuster les profils de goût en fonction de la demande du marché"
+            }
+          ]
+        }
+      ]
     }
   },
   "food": {

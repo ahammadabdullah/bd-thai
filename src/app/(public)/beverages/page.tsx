@@ -2,6 +2,7 @@ import Hero from "@/components/common/hero";
 import { useTranslations } from "next-intl";
 import React from "react";
 import { BeverageCapabilitiesSection } from "./_components/beverage-capatibilites";
+import { BeverageManufacturing } from "./_components/beverage-manufacturing";
 
 const BeveragesPage = () => {
   const t = useTranslations("beverages");
@@ -52,6 +53,7 @@ const BeveragesPage = () => {
         </div>
       </section> */}
       <BeverageCapabilitiesSection />
+      <BeverageManufacturing />
     </div>
   );
 };

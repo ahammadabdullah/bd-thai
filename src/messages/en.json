@@ -135,6 +135,94 @@
         "title": "Sustainable Packaging",
         "subtitle": "In-house rPET preform production for eco-friendly bottles"
       }
+    },
+    "why": {
+      "title": "Why Choose BD Thai Food for Beverage Manufacturing?",
+      "benefits": [
+        {
+          "title": "End-to-End OEM & Private Label Support",
+          "description": "From R&D to packaging, we handle everything."
+        },
+        {
+          "title": "State-of-the-Art Processing",
+          "description": "Advanced bottling & sterilization to maintain freshness."
+        },
+        {
+          "title": "Global Compliance",
+          "description": "Certified HACCP, ISO 22000, BRC, FDA, and Halal."
+        },
+        {
+          "title": "rPET Preform Manufacturing",
+          "description": "Sustainable, high-quality packaging solutions."
+        },
+        {
+          "title": "Custom Formulations",
+          "description": "Develop your own flavors, sugar-free, vitamin-enhanced, or functional drinks."
+        }
+      ],
+      "categories": [
+        {
+          "title": "Carbonated Soft Drinks (CSD)",
+          "subtitle": "Sparkling & Refreshing",
+          "description": "BD Thai Food produces a wide range of carbonated soft drinks, using custom carbonation levels and natural flavoring options to meet global market demands.",
+          "details": [
+            {
+              "label": "Popular Flavors",
+              "value": "Cola, Lemon-Lime, Orange, Grape, Mixed Berry, Tropical Fruit"
+            },
+            {
+              "label": "Custom Formulations",
+              "value": "Sugar-Free, Vitamin-Infused, Energy-Boosted Variants"
+            },
+            {
+              "label": "Packaging Options",
+              "value": "rPET and PET Bottles (250ml - 1.5L)"
+            },
+            {
+              "label": "Ideal for",
+              "value": "Retail, Wholesale, Private Label, Distributors, Supermarkets"
+            }
+          ]
+        },
+        {
+          "title": "UHT (Ultra-High Temperature) Drinks",
+          "subtitle": "Long Shelf-Life, Maximum Freshness",
+          "description": "Our UHT beverage technology allows for safe, shelf-stable drinks without the need for refrigeration, making it ideal for global distribution.",
+          "details": [
+            {
+              "label": "Dairy-Based",
+              "value": "Flavored Milk, Creamer, Protein Drinks"
+            },
+            {
+              "label": "Plant-Based Alternatives",
+              "value": "Almond, Soy, Oat, Coconut Milk"
+            },
+            {
+              "label": "Juices & Functional Beverages",
+              "value": "Vitamin-Enriched Juices, Herbal Infusions, Electrolyte Drinks"
+            }
+          ]
+        },
+        {
+          "title": "R&D & Custom Beverage Formulation",
+          "subtitle": "Innovate with Us",
+          "description": "Looking to create a new, market-disrupting beverage? Our in-house R&D team collaborates with clients to develop custom formulations based on consumer trends and market demands.",
+          "details": [
+            {
+              "label": "Natural Flavors & Colors",
+              "value": "No artificial additives, clean-label solutions"
+            },
+            {
+              "label": "Functional & Health-Boosting Ingredients",
+              "value": "Collagen, Electrolytes, Probiotics"
+            },
+            {
+              "label": "Custom Carbonation & Sweetness Levels",
+              "value": "Adjust taste profiles based on market demand"
+            }
+          ]
+        }
+      ]
     }
   },
   "food": {
