@@ -74,7 +74,13 @@ const FoodPage = () => {
           </p>
           <div className="flex gap-4 justify-center">
             <SmoothScrollLink href="#inquiry-form">
-              <Button size="lg" className="bg-accent hover:bg-accent/90">
+              {/* <Button size="lg" className="bg-accent hover:bg-accent/90">
+                Get a Quote
+              </Button> */}
+              <Button
+                size="lg"
+                className="bg-accent text-white hover:bg-accent/90 transition-transform duration-200 ease-in-out transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
                 Get a Quote
               </Button>
             </SmoothScrollLink>

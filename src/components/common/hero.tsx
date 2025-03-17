@@ -7,8 +7,9 @@ interface HeroProps {
   title: string;
   subtitle: string;
   image: string;
+  button?: string;
 }
-const Hero = ({ title, subtitle, image }: HeroProps) => {
+const Hero = ({ title, subtitle, image, button }: HeroProps) => {
   const t = useTranslations("home");
 
   return (
@@ -32,9 +33,7 @@ const Hero = ({ title, subtitle, image }: HeroProps) => {
         <div className="flex gap-4 justify-center">
           {/* <Link href={"#inquiry-form"}> */}
           <SmoothScrollLink href="#inquiry-form">
-            <Button size="lg" variant="default">
-              {t("hero.cta.quote")}
-            </Button>
+            <Button size="lg">{button || t("hero.cta.quote")}</Button>
           </SmoothScrollLink>
           {/* </Link> */}
         </div>

@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Calendar, User, ArrowLeft, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-// Sample blog data - in a real app, this would come from a database or API
 const blogPosts = [
   {
     slug: "new-sustainable-packaging-initiative",
@@ -86,15 +85,12 @@ export default async function BlogPostPage({
 }) {
   const t = await getTranslations("news");
   const { slug } = await params;
-  // Find the blog post by slug
   const post = blogPosts.find((post) => post.slug === slug);
 
-  // If post not found, return 404
   if (!post) {
     notFound();
   }
 
-  // Get related posts (excluding current post)
   const relatedPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 2);
 
   return (

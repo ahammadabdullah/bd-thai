@@ -46,7 +46,8 @@
   "contract": {
     "hero": {
       "title": "Solutions OEM, Marque Privée & Marque Blanche",
-      "description": "BD Thai Food & Beverage Ltd. offre une fabrication sous contrat de bout en bout, garantissant un développement de produit sans faille, des approbations réglementaires, du branding et de la logistique d'exportation."
+      "description": "BD Thai Food & Beverage Ltd. offre une fabrication sous contrat de bout en bout, garantissant un développement de produit sans faille, des approbations réglementaires, du branding et de la logistique d'exportation.",
+      "cta": "Démarrez votre projet de marque privée aujourd'hui"
     },
     "services": {
       "title": "Nos Services de Fabrication sous Contrat",
