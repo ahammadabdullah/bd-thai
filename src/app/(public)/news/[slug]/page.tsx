@@ -78,13 +78,9 @@ const blogPosts = [
   },
 ];
 
-export default async function BlogPostPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const t = await getTranslations("news");
+export default async function BlogPostPage({ params }: { params: any }) {
   const { slug } = await params;
+  const t = await getTranslations("news");
   const post = blogPosts.find((post) => post.slug === slug);
 
   if (!post) {
