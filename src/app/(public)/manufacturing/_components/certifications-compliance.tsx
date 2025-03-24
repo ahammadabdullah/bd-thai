@@ -1,6 +1,10 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
+import commitment_1 from "@/assets/commitment_1.jpg";
+import commitment_2 from "@/assets/commitment_2.jpg";
+import commitment_3 from "@/assets/commitment_3.jpg";
+
 export function CertificationsCompliance() {
   const t = useTranslations("manufacturing.certifications");
   const certifications = [
@@ -30,6 +34,8 @@ export function CertificationsCompliance() {
       logo: "/fda.jpg?height=80&width=80",
     },
   ];
+
+  const commitment_images = [commitment_1, commitment_2, commitment_3];
 
   return (
     <section className="py-16 bg-gray-50">
@@ -72,13 +78,13 @@ export function CertificationsCompliance() {
               <p className="text-gray-600 mb-4">{t("quality.description")}</p>
             </div>
             <div className="md:w-1/2 grid grid-cols-3 gap-4">
-              {[1, 2, 3].map((img) => (
+              {commitment_images.map((img, idx) => (
                 <div
-                  key={img}
+                  key={idx}
                   className="aspect-square relative rounded-lg overflow-hidden border border-gray-100"
                 >
                   <Image
-                    src={`/placeholder.svg?height=200&width=200`}
+                    src={img}
                     alt="Facility image"
                     fill
                     className="object-cover"
