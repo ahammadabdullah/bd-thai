@@ -1,38 +1,38 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React from "react";
+import f_c from "@/assets/f_c.png";
+import f_hc from "@/assets/f_hc.jpg";
+import f_l from "@/assets/f_l.jpg";
+import f_sc from "@/assets/f_sc.jpg";
+import f_bnc from "@/assets/f_b&c.jpg";
 
 const Products = () => {
   const t = useTranslations("food");
   const products = [
     {
       title: t("products.biscuits.title"),
-      image:
-        "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+      image: f_bnc,
       description: t("products.biscuits.subtitle"),
     },
     {
       title: t("products.cakes.title"),
-      image:
-        "https://images.unsplash.com/photo-1511381939415-e44015466834?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+      image: f_c,
       description: t("products.cakes.subtitle"),
     },
     {
       title: t("products.lollipops.title"),
-      image:
-        "https://images.unsplash.com/photo-1598188080888-42dfffa02287?q=80&w=2108&auto=format&fit=crop&w=1950&q=80",
+      image: f_l,
       description: t("products.lollipops.subtitle"),
     },
     {
       title: t("products.gummies.title"),
-      image:
-        "https://images.unsplash.com/photo-1617627191898-1408bf607b4d?q=80&w=2051&auto=format&fit=crop&w=1950&q=80",
+      image: f_sc,
       description: t("products.gummies.subtitle"),
     },
     {
       title: t("products.candies.title"),
-      image:
-        "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+      image: f_hc,
       description: t("products.candies.subtitle"),
     },
   ];
@@ -57,7 +57,7 @@ const Products = () => {
                 <Image
                   src={product.image || "/placeholder.svg"}
                   alt={product.title}
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="object-contain mix-blend-darken transition-transform duration-300 group-hover:scale-105"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
