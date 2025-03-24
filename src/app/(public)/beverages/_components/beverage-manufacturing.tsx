@@ -8,6 +8,9 @@ import {
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import b_csd from "@/assets/b_csd.jpg";
+import b_rnd from "@/assets/b_r&d.jpg";
+import b_uht from "@/assets/b_uht.jpg";
 
 export function BeverageManufacturing() {
   const t = useTranslations("beverages.why");
@@ -64,7 +67,7 @@ export function BeverageManufacturing() {
         },
       ],
       icon: Droplet,
-      image: "/placeholder.svg?height=300&width=400",
+      image: b_csd,
     },
     {
       title: t("categories.1.title"),
@@ -85,7 +88,8 @@ export function BeverageManufacturing() {
         },
       ],
       icon: Zap,
-      image: "/placeholder.svg?height=300&width=400",
+      // image: "/placeholder.svg?height=300&width=400",
+      image: b_uht,
     },
     {
       title: t("categories.2.title"),
@@ -106,7 +110,7 @@ export function BeverageManufacturing() {
         },
       ],
       icon: Flask,
-      image: "/placeholder.svg?height=300&width=400",
+      image: b_rnd,
     },
   ];
 
