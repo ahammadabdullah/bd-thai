@@ -1,5 +1,6 @@
 "use server";
 
+import { signIn, signOut } from "@/auth/auth";
 import { z } from "zod";
 
 const formSchema = z.object({
@@ -34,4 +35,21 @@ export async function submitInquiry(_: any, formData: FormData) {
     message: "Thank you for your inquiry. We'll get back to you soon!",
     errors: {},
   };
+}
+
+export async function credLogin(email: string, password: string) {
+  try {
+    const response = await signIn("credentials", {
+      email,
+      password,
+      redirect: false,
+    });
+    return response;
+  } catch (err) {
+    throw err;
+  }
+}
+
+export async function logOut() {
+  signOut({ redirectTo: "/login" });
 }

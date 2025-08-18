@@ -16,22 +16,32 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Lock, Mail } from "lucide-react";
+import { credLogin } from "@/actions";
 
 export function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    setError(null);
 
-    // Simulate authentication
-    setTimeout(() => {
-      setIsLoading(false);
+    try {
+      await credLogin(email, password);
       router.push("/dashboard");
-    }, 1000);
+    } catch (err) {
+      if (err instanceof Error) {
+        setError("Invalid email or password");
+      } else {
+        setError("An unknown error occurred");
+      }
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -77,10 +87,11 @@ export function LoginForm() {
           </div>
         </form>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="flex justify-center flex-col">
         <Button className="w-full" onClick={handleSubmit} disabled={isLoading}>
           {isLoading ? "Logging in..." : "Login"}
         </Button>
+        {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
       </CardFooter>
     </Card>
   );

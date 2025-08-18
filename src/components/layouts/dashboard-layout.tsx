@@ -20,8 +20,10 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
-  DropdownMenuTrigger,
+  DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
+import { useRouter } from "next/navigation";
+import { signOut, useSession } from "next-auth/react";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -30,6 +32,7 @@ interface DashboardLayoutProps {
 export function DashboardLayout({ children }: DashboardLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const pathname = usePathname();
+  const router = useRouter();
 
   const routes = [
     {
@@ -48,7 +51,13 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
       icon: FileQuestion,
     },
   ];
-
+  const handleLogOut = async () => {
+    try {
+      await signOut({ redirectTo: "/login" });
+    } catch (e) {
+      console.error(e);
+    }
+  };
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Header */}
@@ -78,10 +87,13 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
               <DropdownMenuItem>Settings</DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem>
-                <Link href="/login" className="flex items-center w-full">
+                <span
+                  onClick={handleLogOut}
+                  className="flex items-center w-full"
+                >
                   <LogOut className="mr-2 h-4 w-4" />
                   <span>Logout</span>
-                </Link>
+                </span>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
