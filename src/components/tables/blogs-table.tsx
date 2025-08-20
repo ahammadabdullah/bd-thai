@@ -10,19 +10,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Plus, Pencil, Trash2 } from "lucide-react";
+
+import { Pencil, Trash2 } from "lucide-react";
+import CreateBlogModal from "../modal/create-blog-modal";
+import EditBlogModal from "../modal/edit-blog-modal";
 
 // Sample blog data
 const initialBlogs = [
@@ -50,7 +41,7 @@ const initialBlogs = [
   },
 ];
 
-interface Blog {
+export interface Blog {
   id: number;
   title: string;
   created_at: string;
@@ -69,30 +60,6 @@ export function BlogsTable() {
     description: "",
   });
 
-  const handleCreateBlog = () => {
-    const blog = {
-      id: blogs.length > 0 ? Math.max(...blogs.map((blog) => blog.id)) + 1 : 1,
-      title: newBlog.title,
-      author: newBlog.author,
-      description: newBlog.description,
-      created_at: new Date().toISOString().split("T")[0],
-    };
-
-    setBlogs([...blogs, blog]);
-    setNewBlog({ title: "", author: "", description: "" });
-    setIsCreateModalOpen(false);
-  };
-
-  const handleEditBlog = () => {
-    if (!currentBlog) return;
-
-    setBlogs(
-      blogs.map((blog) => (blog.id === currentBlog.id ? currentBlog : blog))
-    );
-
-    setIsEditModalOpen(false);
-  };
-
   const handleDeleteBlog = (id: number) => {
     if (confirm("Are you sure you want to delete this blog?")) {
       setBlogs(blogs.filter((blog) => blog.id !== id));
@@ -108,67 +75,10 @@ export function BlogsTable() {
     <div>
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-xl font-semibold">Blog Posts</h2>
-        <Dialog open={isCreateModalOpen} onOpenChange={setIsCreateModalOpen}>
-          <DialogTrigger asChild>
-            <Button>
-              <Plus className="mr-2 h-4 w-4" />
-              Create Blog
-            </Button>
-          </DialogTrigger>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle>Create New Blog</DialogTitle>
-              <DialogDescription>
-                Add a new blog post to your website.
-              </DialogDescription>
-            </DialogHeader>
-            <div className="grid gap-4 py-4">
-              <div className="grid gap-2">
-                <Label htmlFor="title">Title</Label>
-                <Input
-                  id="title"
-                  value={newBlog.title}
-                  onChange={(e) =>
-                    setNewBlog({ ...newBlog, title: e.target.value })
-                  }
-                  placeholder="Enter blog title"
-                />
-              </div>
-              <div className="grid gap-2">
-                <Label htmlFor="author">Author</Label>
-                <Input
-                  id="author"
-                  value={newBlog.author}
-                  onChange={(e) =>
-                    setNewBlog({ ...newBlog, author: e.target.value })
-                  }
-                  placeholder="Enter author name"
-                />
-              </div>
-              <div className="grid gap-2">
-                <Label htmlFor="description">Description</Label>
-                <Textarea
-                  id="description"
-                  value={newBlog.description}
-                  onChange={(e) =>
-                    setNewBlog({ ...newBlog, description: e.target.value })
-                  }
-                  placeholder="Enter blog description"
-                  rows={4}
-                />
-              </div>
-            </div>
-            <DialogFooter>
-              <Button
-                variant="outline"
-                onClick={() => setIsCreateModalOpen(false)}
-              >
-                Cancel
-              </Button>
-              <Button onClick={handleCreateBlog}>Create</Button>
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
+        <CreateBlogModal
+          isCreateModalOpen={isCreateModalOpen}
+          setIsCreateModalOpen={setIsCreateModalOpen}
+        />
       </div>
 
       <div className="rounded-md border">
@@ -218,60 +128,12 @@ export function BlogsTable() {
       </div>
 
       {/* Edit Blog Modal */}
-      <Dialog open={isEditModalOpen} onOpenChange={setIsEditModalOpen}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Edit Blog</DialogTitle>
-            <DialogDescription>
-              Make changes to the blog post.
-            </DialogDescription>
-          </DialogHeader>
-          {currentBlog && (
-            <div className="grid gap-4 py-4">
-              <div className="grid gap-2">
-                <Label htmlFor="edit-title">Title</Label>
-                <Input
-                  id="edit-title"
-                  value={currentBlog.title}
-                  onChange={(e) =>
-                    setCurrentBlog({ ...currentBlog, title: e.target.value })
-                  }
-                />
-              </div>
-              <div className="grid gap-2">
-                <Label htmlFor="edit-author">Author</Label>
-                <Input
-                  id="edit-author"
-                  value={currentBlog.author}
-                  onChange={(e) =>
-                    setCurrentBlog({ ...currentBlog, author: e.target.value })
-                  }
-                />
-              </div>
-              <div className="grid gap-2">
-                <Label htmlFor="edit-description">Description</Label>
-                <Textarea
-                  id="edit-description"
-                  value={currentBlog.description}
-                  onChange={(e) =>
-                    setCurrentBlog({
-                      ...currentBlog,
-                      description: e.target.value,
-                    })
-                  }
-                  rows={4}
-                />
-              </div>
-            </div>
-          )}
-          <DialogFooter>
-            <Button variant="outline" onClick={() => setIsEditModalOpen(false)}>
-              Cancel
-            </Button>
-            <Button onClick={handleEditBlog}>Save Changes</Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+      <EditBlogModal
+        isEditModalOpen={isEditModalOpen}
+        setIsEditModalOpen={setIsEditModalOpen}
+        currentBlog={currentBlog}
+        setCurrentBlog={setCurrentBlog}
+      />
     </div>
   );
 }
