@@ -11,58 +11,34 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-import { Pencil, Trash2 } from "lucide-react";
 import CreateBlogModal from "../modal/create-blog-modal";
 import EditBlogModal from "../modal/edit-blog-modal";
-
-// Sample blog data
-const initialBlogs = [
-  {
-    id: 1,
-    title: "Getting Started with Next.js",
-    created_at: "2023-05-15",
-    author: "John Doe",
-    description: "A beginner's guide to Next.js framework and its features.",
-  },
-  {
-    id: 2,
-    title: "Understanding React Hooks",
-    created_at: "2023-06-22",
-    author: "Jane Smith",
-    description:
-      "Deep dive into React Hooks and how they can simplify your code.",
-  },
-  {
-    id: 3,
-    title: "CSS Grid Layout",
-    created_at: "2023-07-10",
-    author: "Alex Johnson",
-    description: "Learn how to create complex layouts with CSS Grid.",
-  },
-];
+import { useQuery } from "@tanstack/react-query";
+import { getAllBlogs } from "@/actions";
+import { Pencil, Trash2 } from "lucide-react";
 
 export interface Blog {
-  id: number;
+  id: string;
   title: string;
-  created_at: string;
+  date: Date;
   author: string;
   description: string;
+  image: string;
 }
 
 export function BlogsTable() {
-  const [blogs, setBlogs] = useState<Blog[]>(initialBlogs);
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [currentBlog, setCurrentBlog] = useState<Blog | null>(null);
-  const [newBlog, setNewBlog] = useState({
-    title: "",
-    author: "",
-    description: "",
-  });
 
-  const handleDeleteBlog = (id: number) => {
+  const { data: blogs, refetch } = useQuery({
+    queryKey: ["blogs"],
+    queryFn: async () => await getAllBlogs(),
+  });
+  console.log(blogs);
+
+  const handleDeleteBlog = (id: string) => {
     if (confirm("Are you sure you want to delete this blog?")) {
-      setBlogs(blogs.filter((blog) => blog.id !== id));
     }
   };
 
@@ -78,6 +54,7 @@ export function BlogsTable() {
         <CreateBlogModal
           isCreateModalOpen={isCreateModalOpen}
           setIsCreateModalOpen={setIsCreateModalOpen}
+          refetch={refetch}
         />
       </div>
 
@@ -94,11 +71,17 @@ export function BlogsTable() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {blogs.map((blog) => (
+            {blogs?.map((blog) => (
               <TableRow key={blog.id}>
                 <TableCell>{blog.id}</TableCell>
                 <TableCell className="font-medium">{blog.title}</TableCell>
-                <TableCell>{blog.created_at}</TableCell>
+                <TableCell>
+                  {new Date(blog?.date).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  })}
+                </TableCell>
                 <TableCell>{blog.author}</TableCell>
                 <TableCell className="max-w-xs truncate">
                   {blog.description}
@@ -129,6 +112,7 @@ export function BlogsTable() {
 
       {/* Edit Blog Modal */}
       <EditBlogModal
+        refetch={refetch}
         isEditModalOpen={isEditModalOpen}
         setIsEditModalOpen={setIsEditModalOpen}
         currentBlog={currentBlog}

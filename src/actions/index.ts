@@ -1,6 +1,10 @@
 "use server";
 
 import { signIn, signOut } from "@/auth/auth";
+import { BlogData } from "@/components/modal/create-blog-modal";
+import prisma from "@/lib/db";
+import { slugFromTitle } from "@/lib/utils";
+import { revalidatePath } from "next/cache";
 import { z } from "zod";
 
 const formSchema = z.object({
@@ -52,4 +56,70 @@ export async function credLogin(email: string, password: string) {
 
 export async function logOut() {
   signOut({ redirectTo: "/login" });
+}
+
+export async function createBlog(data: BlogData) {
+  try {
+    const response = await prisma.blog.create({
+      data: {
+        title: data.title,
+        author: data.author,
+        description: data.description,
+        image: data.imageUrl,
+        slug: slugFromTitle(data.title),
+      },
+    });
+    return response;
+  } catch (err) {
+    throw err;
+  }
+}
+
+export async function deleteBlog(id: string) {
+  try {
+    const blog = await prisma.blog.delete({
+      where: { id },
+    });
+    return blog;
+  } catch (err) {
+    throw err;
+  }
+}
+
+export async function updateBlog(id: string, data: BlogData) {
+  try {
+    const blog = await prisma.blog.update({
+      where: { id },
+      data: {
+        title: data.title,
+        author: data.author,
+        description: data.description,
+        image: data.imageUrl,
+        slug: slugFromTitle(data.title),
+      },
+    });
+    return blog;
+  } catch (err) {
+    throw err;
+  }
+}
+
+export async function getAllBlogs() {
+  try {
+    const blogs = await prisma.blog.findMany();
+    return blogs;
+  } catch (err) {
+    throw err;
+  }
+}
+
+export async function getBlogById(id: string) {
+  try {
+    const blog = await prisma.blog.findUnique({
+      where: { id },
+    });
+    return blog;
+  } catch (err) {
+    throw err;
+  }
 }

@@ -10,33 +10,67 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Plus } from "lucide-react";
+import { Loader2, Plus } from "lucide-react";
 import { Button } from "../ui/button";
 import { useState } from "react";
-import { set } from "zod";
+import { useUploadThing } from "@/hooks/uploadthing-hooks";
+import { createBlog } from "@/actions";
 
 interface CreateBlogModalProps {
   isCreateModalOpen: boolean;
   setIsCreateModalOpen: (open: boolean) => void;
+  refetch: () => void;
+}
+
+export interface BlogData {
+  title: string;
+  author: string;
+  description: string;
+  imageUrl: string;
 }
 
 function CreateBlogModal({
   isCreateModalOpen,
   setIsCreateModalOpen,
+  refetch,
 }: CreateBlogModalProps) {
-  const [newBlog, setNewBlog] = useState({
+  const [newBlog, setNewBlog] = useState<BlogData>({
     title: "",
     author: "",
     description: "",
     imageUrl: "",
   });
-
+  const [loading, setLoading] = useState(false);
   const [image, setImage] = useState<File | null>(null);
-  console.log(image);
-  const handleCreateBlog = (e: React.FormEvent<HTMLFormElement>) => {
+
+  const { startUpload } = useUploadThing("imageUploader", {
+    onUploadError(err) {
+      console.log(err, "from create blog modal");
+    },
+    onClientUploadComplete(res) {
+      const newBlogWithImage = { ...newBlog, imageUrl: res[0].ufsUrl };
+      createBlog(newBlogWithImage);
+    },
+  });
+
+  const handleCreateBlog = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(newBlog);
-    setIsCreateModalOpen(false);
+    try {
+      setLoading(true);
+      await startUpload([image!]);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      refetch();
+      setIsCreateModalOpen(false);
+      setNewBlog({
+        title: "",
+        author: "",
+        description: "",
+        imageUrl: "",
+      });
+      setLoading(false);
+    }
   };
   return (
     <Dialog open={isCreateModalOpen} onOpenChange={setIsCreateModalOpen}>
@@ -116,7 +150,9 @@ function CreateBlogModal({
             >
               Cancel
             </Button>
-            <Button type="submit">Create</Button>
+            <Button type="submit" disabled={loading}>
+              {loading ? <Loader2 className="animate-spin" /> : "Create"}
+            </Button>
           </DialogFooter>
         </form>
       </DialogContent>

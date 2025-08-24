@@ -13,8 +13,6 @@ model Blog {
     title       String
     date        DateTime @default(now())
     author      String
-    readTime    String
     description String
-    content     String
     image       String
 }
