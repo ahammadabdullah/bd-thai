@@ -14,7 +14,7 @@ import {
 import CreateBlogModal from "../modal/create-blog-modal";
 import EditBlogModal from "../modal/edit-blog-modal";
 import { useQuery } from "@tanstack/react-query";
-import { getAllBlogs } from "@/actions";
+import { deleteBlog, getAllBlogs } from "@/actions";
 import { Pencil, Trash2 } from "lucide-react";
 
 export interface Blog {
@@ -37,8 +37,10 @@ export function BlogsTable() {
   });
   console.log(blogs);
 
-  const handleDeleteBlog = (id: string) => {
+  const handleDeleteBlog = async (id: string) => {
     if (confirm("Are you sure you want to delete this blog?")) {
+      await deleteBlog(id);
+      refetch();
     }
   };
 
@@ -73,7 +75,7 @@ export function BlogsTable() {
           <TableBody>
             {blogs?.map((blog) => (
               <TableRow key={blog.id}>
-                <TableCell>{blog.id}</TableCell>
+                <TableCell>{blog.id.slice(0, 6)}...</TableCell>
                 <TableCell className="font-medium">{blog.title}</TableCell>
                 <TableCell>
                   {new Date(blog?.date).toLocaleDateString("en-US", {
