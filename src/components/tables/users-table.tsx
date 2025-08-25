@@ -10,40 +10,27 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-
-// Sample user data
-const initialUsers = [
-  {
-    id: 1,
-    name: "John Doe",
-    email: "john@example.com",
-    role: "Admin",
-    joined: "2023-01-15",
-  },
-  {
-    id: 2,
-    name: "Jane Smith",
-    email: "jane@example.com",
-    role: "Editor",
-    joined: "2023-02-22",
-  },
-  {
-    id: 3,
-    name: "Bob Johnson",
-    email: "bob@example.com",
-    role: "User",
-    joined: "2023-03-10",
-  },
-];
+import AddUserModal from "../modal/add-user-modal";
+import { useQuery } from "@tanstack/react-query";
+import { getAllUsers } from "@/actions";
 
 export function UsersTable() {
-  const [users] = useState(initialUsers);
+  const [isAddUserModalOpen, setIsAddUserModalOpen] = useState(false);
+
+  const { data: users, refetch } = useQuery({
+    queryKey: ["users"],
+    queryFn: async () => await getAllUsers(),
+  });
 
   return (
     <div>
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-xl font-semibold">User Accounts</h2>
-        <Button>Add User</Button>
+        <AddUserModal
+          isAddUserModalOpen={isAddUserModalOpen}
+          setIsAddUserModalOpen={setIsAddUserModalOpen}
+          refetch={refetch}
+        />
       </div>
 
       <div className="rounded-md border">
@@ -59,17 +46,20 @@ export function UsersTable() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {users.map((user) => (
+            {users?.map((user) => (
               <TableRow key={user.id}>
-                <TableCell>{user.id}</TableCell>
+                <TableCell>{user.id.slice(0, 6)}</TableCell>
                 <TableCell className="font-medium">{user.name}</TableCell>
                 <TableCell>{user.email}</TableCell>
                 <TableCell>{user.role}</TableCell>
-                <TableCell>{user.joined}</TableCell>
                 <TableCell>
-                  <Button variant="outline" size="sm" className="mr-2">
-                    Edit
-                  </Button>
+                  {new Date(user.createdAt).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  })}
+                </TableCell>
+                <TableCell>
                   <Button variant="outline" size="sm">
                     Delete
                   </Button>
