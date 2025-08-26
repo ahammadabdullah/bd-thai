@@ -1,3 +1,4 @@
+import prisma from "@/lib/db";
 import { NextAuthConfig } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
@@ -12,11 +13,10 @@ export const authConfig: NextAuthConfig = {
         if (!credentials || !credentials.email || !credentials.password) {
           throw new Error("Missing credentials");
         }
-        const dbUser = {
-          email: process.env.ADMIN_EMAIL,
-          password: process.env.ADMIN_PASSWORD,
-        };
-        if (dbUser.email !== credentials.email) {
+        const dbUser = await prisma.user.findUnique({
+          where: { email: credentials.email as string },
+        });
+        if (!dbUser) {
           throw new Error("Invalid email");
         }
 
@@ -40,6 +40,8 @@ export const authConfig: NextAuthConfig = {
       if (user) {
         token.id = user.id as string;
         token.email = user.email as string;
+        token.role = user.role as string;
+        token.name = user.name as string;
       }
       return token;
     },
@@ -47,6 +49,8 @@ export const authConfig: NextAuthConfig = {
       if (session.user) {
         if (token.email) {
           session.user.email = token.email;
+          session.user.role = token.role;
+          session.user.name = token.name;
         }
       }
       return session;
