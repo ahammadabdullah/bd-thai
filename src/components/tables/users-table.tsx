@@ -24,7 +24,11 @@ export function UsersTable() {
     useState(false);
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
 
-  const { data: users, refetch } = useQuery({
+  const {
+    data: users,
+    refetch,
+    isLoading,
+  } = useQuery({
     queryKey: ["users"],
     queryFn: async () => await getAllUsers(),
   });
@@ -33,11 +37,13 @@ export function UsersTable() {
   const loggedInUser = session?.user;
 
   const handleDeleteUser = async (userId: string) => {
-    try {
-      await deleteUser(userId);
-      refetch();
-    } catch (error) {
-      console.error("Error deleting user:", error);
+    if (confirm("Are you sure you want to delete this user?")) {
+      try {
+        await deleteUser(userId);
+        refetch();
+      } catch (error) {
+        console.error("Error deleting user:", error);
+      }
     }
   };
 
@@ -92,17 +98,33 @@ export function UsersTable() {
                     >
                       Edit
                     </Button>
-                    <Button
-                      onClick={() => handleDeleteUser(user.id)}
-                      variant="outline"
-                      size="sm"
-                    >
-                      Delete
-                    </Button>
+                    {user.role !== "ROOT" && (
+                      <Button
+                        onClick={() => handleDeleteUser(user.id)}
+                        variant="outline"
+                        size="sm"
+                      >
+                        Delete
+                      </Button>
+                    )}
                   </TableCell>
                 )}
               </TableRow>
             ))}
+            {isLoading && (
+              <TableRow>
+                <TableCell colSpan={6} className="text-center">
+                  Loading users...
+                </TableCell>
+              </TableRow>
+            )}
+            {users?.length === 0 && !isLoading && (
+              <TableRow>
+                <TableCell colSpan={6} className="text-center">
+                  No users found.
+                </TableCell>
+              </TableRow>
+            )}
           </TableBody>
         </Table>
       </div>

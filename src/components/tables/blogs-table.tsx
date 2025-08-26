@@ -31,7 +31,11 @@ export function BlogsTable() {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [currentBlog, setCurrentBlog] = useState<Blog | null>(null);
 
-  const { data: blogs, refetch } = useQuery({
+  const {
+    data: blogs,
+    refetch,
+    isLoading,
+  } = useQuery({
     queryKey: ["blogs"],
     queryFn: async () => await getAllBlogs(),
   });
@@ -108,6 +112,20 @@ export function BlogsTable() {
                 </TableCell>
               </TableRow>
             ))}
+            {isLoading && (
+              <TableRow>
+                <TableCell colSpan={6} className="text-center">
+                  Loading blogs...
+                </TableCell>
+              </TableRow>
+            )}
+            {blogs?.length === 0 && !isLoading && (
+              <TableRow>
+                <TableCell colSpan={6} className="text-center">
+                  No blogs found.
+                </TableCell>
+              </TableRow>
+            )}
           </TableBody>
         </Table>
       </div>

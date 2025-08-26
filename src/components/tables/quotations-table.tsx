@@ -34,7 +34,11 @@ export function QuotationsTable() {
   const [currentQuotation, setCurrentQuotation] = useState<Quotation | null>(
     null
   );
-  const { data: quotations, refetch } = useQuery({
+  const {
+    data: quotations,
+    refetch,
+    isLoading,
+  } = useQuery({
     queryKey: ["quotations"],
     queryFn: async () => await getAllQuotations(),
   });
@@ -121,6 +125,20 @@ export function QuotationsTable() {
                 </TableCell>
               </TableRow>
             ))}
+            {isLoading && (
+              <TableRow>
+                <TableCell colSpan={8} className="text-center">
+                  Loading quotations...
+                </TableCell>
+              </TableRow>
+            )}
+            {quotations?.length === 0 && !isLoading && (
+              <TableRow>
+                <TableCell colSpan={8} className="text-center">
+                  No quotations found.
+                </TableCell>
+              </TableRow>
+            )}
           </TableBody>
         </Table>
       </div>
