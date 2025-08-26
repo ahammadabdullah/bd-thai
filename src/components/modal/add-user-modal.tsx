@@ -12,7 +12,7 @@ import { Loader2, Plus } from "lucide-react";
 import { Label } from "@radix-ui/react-label";
 import { Input } from "../ui/input";
 import { useState } from "react";
-import { createUser, deleteUser } from "@/actions";
+import { createUser } from "@/actions/user";
 
 interface AddUserModalProps {
   isAddUserModalOpen: boolean;
@@ -23,7 +23,7 @@ interface AddUserModalProps {
 function AddUserModal({
   isAddUserModalOpen,
   setIsAddUserModalOpen,
-  refetch
+  refetch,
 }: AddUserModalProps) {
   const [userInfo, setUserInfo] = useState({
     name: "",

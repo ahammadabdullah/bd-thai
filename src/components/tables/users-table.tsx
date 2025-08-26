@@ -12,7 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import AddUserModal from "../modal/add-user-modal";
 import { useQuery } from "@tanstack/react-query";
-import { getAllUsers } from "@/actions";
+import { getAllUsers } from "@/actions/user";
 import { useSession } from "next-auth/react";
 import ChangePasswordModal from "../modal/change-password-modal";
 import { User } from "@prisma/client";

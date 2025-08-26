@@ -14,7 +14,7 @@ import {
 import CreateBlogModal from "../modal/create-blog-modal";
 import EditBlogModal from "../modal/edit-blog-modal";
 import { useQuery } from "@tanstack/react-query";
-import { deleteBlog, getAllBlogs } from "@/actions";
+import { deleteBlog, getAllBlogs } from "@/actions/blogs";
 import { Pencil, Trash2 } from "lucide-react";
 
 export interface Blog {

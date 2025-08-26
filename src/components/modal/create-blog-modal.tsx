@@ -14,7 +14,7 @@ import { Loader2, Plus } from "lucide-react";
 import { Button } from "../ui/button";
 import { useState } from "react";
 import { useUploadThing } from "@/hooks/uploadthing-hooks";
-import { createBlog } from "@/actions";
+import { createBlog } from "@/actions/blogs";
 
 interface CreateBlogModalProps {
   isCreateModalOpen: boolean;

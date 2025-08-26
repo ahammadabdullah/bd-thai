@@ -14,7 +14,7 @@ import { Button } from "../ui/button";
 import { Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useUploadThing } from "@/hooks/uploadthing-hooks";
-import { updateBlog } from "@/actions";
+import { updateBlog } from "@/actions/blogs";
 
 interface EditBlogProps {
   isEditModalOpen: boolean;

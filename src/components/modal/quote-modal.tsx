@@ -5,12 +5,12 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "../ui/button";
 import { useState } from "react";
 import { Quotation, QuotationStatus } from "@prisma/client";
 import { updateStatus } from "@/actions/inquiry";
+import { Loader2 } from "lucide-react";
 
 interface QuoteModalProps {
   isQuoteModalOpen: boolean;
@@ -30,7 +30,6 @@ function QuoteModal({
   const handleUpdateStatus = async (status: QuotationStatus) => {
     setLoading(true);
     try {
-      // Call your API to update the quotation status
       if (quotation?.id) {
         await updateStatus(quotation.id, status);
         refetch();
@@ -97,16 +96,18 @@ function QuoteModal({
           {quotation?.status === "PENDING" && (
             <>
               <Button
+                disabled={loading}
                 className="bg-red-500 hover:bg-red-200 hover:text-red-500"
                 onClick={() => handleUpdateStatus("REJECTED")}
               >
-                Reject
+                {loading ? <Loader2 className="animate-spin" /> : "Reject"}
               </Button>
               <Button
+                disabled={loading}
                 className="bg-green-500 hover:bg-green-200 hover:text-green-500"
                 onClick={() => handleUpdateStatus("APPROVED")}
               >
-                Approve
+                {loading ? <Loader2 className="animate-spin" /> : "Approve"}
               </Button>
             </>
           )}

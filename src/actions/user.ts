@@ -31,3 +31,32 @@ export async function deleteUser(id: string) {
     throw err;
   }
 }
+
+export async function createUser(data: {
+  name: string;
+  email: string;
+  password: string;
+}) {
+  try {
+    const user = await prisma.user.create({
+      data: {
+        name: data.name,
+        email: data.email,
+        password: data.password,
+        role: "ADMIN",
+      },
+    });
+    return user;
+  } catch (err) {
+    throw err;
+  }
+}
+
+export async function getAllUsers() {
+  try {
+    const users = await prisma.user.findMany();
+    return users;
+  } catch (err) {
+    throw err;
+  }
+}

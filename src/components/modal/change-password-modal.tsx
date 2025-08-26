@@ -8,8 +8,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "../ui/button";
 import { useState } from "react";
-import { Quotation, QuotationStatus, User } from "@prisma/client";
-import { updateStatus } from "@/actions/inquiry";
+import { User } from "@prisma/client";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { changeUserPassword } from "@/actions/user";
@@ -106,7 +105,7 @@ function ChangePasswordModal({
             }
             className="bg-green-500 hover:bg-green-200 hover:text-green-500"
           >
-            {loading ? <Loader2 /> : "Change Password"}
+            {loading ? <Loader2 className="animate-spin" /> : "Change Password"}
           </Button>
         </DialogFooter>
       </DialogContent>
