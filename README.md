@@ -1,36 +1,136 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BD Thai Food & Beverage Ltd. Website
 
-## Getting Started
+A multilingual, full-featured web application for BD Thai Food & Beverage Ltd., built with Next.js, Prisma, and Tailwind CSS. The site supports English, Arabic, and French, and includes a secure admin dashboard for managing blogs, users, and quotations.
 
-First, run the development server:
+## Technologies Used
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js (App Router)**: Modern React framework for server-side rendering, routing, and API routes.
+- **React**: UI library for building interactive interfaces.
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
+- **Prisma**: ORM for MongoDB, used for database access and modeling.
+- **NextAuth**: Authentication solution for secure login and user management.
+- **next-intl**: Internationalization (i18n) for multilingual support.
+- **React Query**: Data fetching and caching for client-side interactivity.
+- **UploadThing**: File upload handling for blog images.
+- **Lucide React**: Icon library for modern UI icons.
+
+## Project Structure
+
+```
+├── prisma/
+│   └── schema.prisma         # Database models for Blog, User, Quotation
+├── public/                   # Static assets and images
+├── src/
+│   ├── actions/
+│   │   ├──index              # Server actions for Auth operations
+│   │   ├──blogs              # Server actions for Blog operations
+│   │   ├──inquiry            # Server actions for Quotation operations
+│   │   ├──users              # Server actions for User operations
+│   ├── app/                  # Next.js app directory (routing, pages, layouts)
+│   │   ├── (admin)/          # Admin dashboard routes (hidden group route)
+│   │   │   └── dashboard/
+│   │   │       ├── blogs/    # Blog management
+│   │   │       ├── quotations/ # Quotation management
+│   │   │       └── users/    # User management
+│   │   ├── (public)/         # Public-facing routes (hidden group route)
+│   │   │   ├── beverages/    # Beverages info
+│   │   │   ├── contract/     # Contract manufacturing info
+│   │   │   ├── food/         # Food products info
+│   │   │   ├── manufacturing/# Manufacturing & compliance info
+│   │   │   ├── news/         # News & blogs
+│   ├── assets/               # Images and static files
+│   ├── auth/                 # Authentication config and logic
+│   ├── components/           # Reusable UI components and modals
+│   ├── hooks/                # Custom React hooks
+│   ├── i18n/                 # Internationalization setup
+│   ├── lib/                  # Utility functions and Prisma client
+│   ├── messages/             # Translation files (en, ar, fr)
+│   └── providers/            # React context providers
+├── .env                      # Environment variables (DB, Auth, etc.)
+├── package.json              # Project dependencies and scripts
+└── README.md                 # Project documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Multilingual Website
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Supports English, Arabic, and French.
+- All content, navigation, and forms are translated using `next-intl`.
+- Language switcher available in the navbar.
 
-## Learn More
+### Admin Dashboard
 
-To learn more about Next.js, take a look at the following resources:
+Accessible to authorized users via secure login.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Blog Management
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Add, edit, and delete blog posts.
+- Upload images for blogs.
+- Blogs are displayed in a sortable, paginated table.
 
-## Deploy on Vercel
+#### User Management
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Add new users.
+- Update user details and passwords.
+- Delete users.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+#### Quotation Management
+
+- View all submitted quotations.
+- Update quotation status (Pending, Approved, Rejected).
+
+### Inquiry & Quotation Forms
+
+- Visitors can submit product inquiries and quotation requests.
+- Admins can view and manage submissions from the dashboard.
+
+### Technologies & Integrations
+
+- **Authentication**: NextAuth with credentials provider and role-based access.
+- **Database**: MongoDB via Prisma ORM.
+- **File Uploads**: UploadThing for blog images.
+- **UI**: Tailwind CSS, Lucide icons, Radix UI dialogs and forms.
+- **Data Fetching**: React Query for client-side updates and caching.
+
+## How to Run
+
+1. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+2. **Set up environment variables:**
+
+   - Copy `.env.example` to `.env` and fill in your MongoDB connection string, authentication secrets, and admin credentials.
+
+3. **Generate Prisma client:**
+
+   ```bash
+   npx prisma generate
+   ```
+
+4. **Push database schema:**
+
+   ```bash
+   npx prisma db push
+   ```
+
+5. **Start the development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+6. **Access the site:**
+   - Visit [http://localhost:3000](http://localhost:3000) for the public site.
+   - Visit `/dashboard` for the admin dashboard (after logging in).
+   - Public routes are organized under the `/public` group for better code structure, but URLs remain clean for users.
+
+## Notes
+
+- All admin features require authentication.
+- The site is fully responsive and optimized for modern browsers.
+
+---

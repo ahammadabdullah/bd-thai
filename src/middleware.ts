@@ -17,8 +17,6 @@ export async function middleware(request: NextRequest) {
   ];
 
   if (isLoggedIn && pathname === "/login") {
-    console.log(session.user);
-    console.log("User is logged in and tried to access login page");
     return NextResponse.redirect(new URL("/dashboard", request.url));
   }
 

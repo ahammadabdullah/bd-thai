@@ -39,7 +39,6 @@ export function BlogsTable() {
     queryKey: ["blogs"],
     queryFn: async () => await getAllBlogs(),
   });
-  console.log(blogs);
 
   const handleDeleteBlog = async (id: string) => {
     if (confirm("Are you sure you want to delete this blog?")) {
