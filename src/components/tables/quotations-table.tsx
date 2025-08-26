@@ -57,9 +57,7 @@ export function QuotationsTable() {
   };
 
   const handleExportQuote = (quote: QuotationType) => {
-    // Implement your export logic here
     generatePDF(quote);
-    console.log("Exporting quote:", quote);
   };
 
   return (

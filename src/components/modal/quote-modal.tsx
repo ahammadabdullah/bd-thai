@@ -49,6 +49,9 @@ function QuoteModal({
         <DialogHeader>
           <DialogTitle>Quotation Details</DialogTitle>
         </DialogHeader>
+        <DialogDescription>
+          View and manage the details of the selected quotation request.
+        </DialogDescription>
         <div className="pt-5 space-y-3 text-sm">
           <div className="grid grid-cols-[100px_1fr] items-start">
             <strong>Name:</strong>
