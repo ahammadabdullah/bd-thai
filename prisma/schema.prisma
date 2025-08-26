@@ -9,7 +9,7 @@ datasource db {
 
 model Blog {
     id          String   @id @default(auto()) @map("_id") @db.ObjectId
-    slug        String
+    slug        String   @unique
     title       String
     date        DateTime @default(now())
     author      String

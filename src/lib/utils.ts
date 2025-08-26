@@ -60,3 +60,10 @@ export const generatePDF = (quote: Quotation) => {
   });
   doc.save(`quotation_${quote.id}.pdf`);
 };
+
+export const getReadTime = (text: string) => {
+  const wordsPerMinute = 200;
+  const textLength = text.split(" ").length;
+  const minutes = Math.ceil(textLength / wordsPerMinute);
+  return `${minutes} min read`;
+};

@@ -181,3 +181,38 @@ export async function getAllUsers() {
     throw err;
   }
 }
+
+export async function getBlogBySlug(slug: string) {
+  try {
+    const blog = await prisma.blog.findUnique({
+      where: { slug },
+    });
+    return blog;
+  } catch (err) {
+    throw err;
+  }
+}
+export async function getRelatedPostBySlug(slug: string) {
+  try {
+    const blog = await prisma.blog.findUnique({
+      where: { slug },
+    });
+    if (!blog) return [];
+    const relatedPosts = await prisma.blog.findMany({
+      where: {
+        id: { not: blog.id },
+      },
+      take: 2,
+    });
+    return relatedPosts;
+  } catch (err) {
+    throw err;
+  }
+}
+
+export async function getAllBlogSlugs() {
+  const posts = await prisma.blog.findMany({
+    select: { slug: true },
+  });
+  return posts.map((p) => p.slug);
+}
