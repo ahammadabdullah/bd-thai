@@ -1,12 +1,8 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Calendar, User, ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
-import Image from "next/image";
 import { useQuery } from "@tanstack/react-query";
-import { getAllBlogs } from "@/actions";
+import { getAllBlogs } from "@/actions/blogs";
 import PostCard from "@/components/blogs/post-card";
 
 const LatestPosts = () => {
