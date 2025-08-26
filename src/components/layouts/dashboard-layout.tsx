@@ -20,7 +20,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
-  DropdownMenuTrigger
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useRouter } from "next/navigation";
 import { signOut, useSession } from "next-auth/react";
@@ -32,7 +32,6 @@ interface DashboardLayoutProps {
 export function DashboardLayout({ children }: DashboardLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const pathname = usePathname();
-  const router = useRouter();
 
   const routes = [
     {
@@ -58,6 +57,9 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
       console.error(e);
     }
   };
+  const { data: session } = useSession();
+  const user = session?.user;
+
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Header */}
@@ -78,7 +80,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="flex items-center gap-2">
                 <User className="h-5 w-5" />
-                <span>Admin</span>
+                <span>{user?.name}</span>
                 <ChevronDown className="h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>

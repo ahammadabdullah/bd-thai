@@ -154,25 +154,6 @@ export async function createUser(data: {
   }
 }
 
-export async function deleteUser(id: string) {
-  try {
-    const user = await prisma.user.findUnique({
-      where: { id },
-    });
-
-    if (user?.role === "ROOT") {
-      throw new Error("Root cannot be deleted");
-    }
-
-    const deletedUser = await prisma.user.delete({
-      where: { id },
-    });
-    return user;
-  } catch (err) {
-    throw err;
-  }
-}
-
 export async function getAllUsers() {
   try {
     const users = await prisma.user.findMany();

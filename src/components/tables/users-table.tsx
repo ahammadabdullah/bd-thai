@@ -13,24 +13,45 @@ import { Button } from "@/components/ui/button";
 import AddUserModal from "../modal/add-user-modal";
 import { useQuery } from "@tanstack/react-query";
 import { getAllUsers } from "@/actions";
+import { useSession } from "next-auth/react";
+import ChangePasswordModal from "../modal/change-password-modal";
+import { User } from "@prisma/client";
+import { deleteUser } from "@/actions/user";
 
 export function UsersTable() {
   const [isAddUserModalOpen, setIsAddUserModalOpen] = useState(false);
+  const [isChangePasswordModalOpen, setIsChangePasswordModalOpen] =
+    useState(false);
+  const [selectedUser, setSelectedUser] = useState<User | null>(null);
 
   const { data: users, refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => await getAllUsers(),
   });
 
+  const { data: session } = useSession();
+  const loggedInUser = session?.user;
+
+  const handleDeleteUser = async (userId: string) => {
+    try {
+      await deleteUser(userId);
+      refetch();
+    } catch (error) {
+      console.error("Error deleting user:", error);
+    }
+  };
+
   return (
     <div>
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-xl font-semibold">User Accounts</h2>
-        <AddUserModal
-          isAddUserModalOpen={isAddUserModalOpen}
-          setIsAddUserModalOpen={setIsAddUserModalOpen}
-          refetch={refetch}
-        />
+        {loggedInUser?.role === "ROOT" && (
+          <AddUserModal
+            isAddUserModalOpen={isAddUserModalOpen}
+            setIsAddUserModalOpen={setIsAddUserModalOpen}
+            refetch={refetch}
+          />
+        )}
       </div>
 
       <div className="rounded-md border">
@@ -42,7 +63,7 @@ export function UsersTable() {
               <TableHead>Email</TableHead>
               <TableHead>Role</TableHead>
               <TableHead>Joined</TableHead>
-              <TableHead>Actions</TableHead>
+              {loggedInUser?.role === "ROOT" && <TableHead>Actions</TableHead>}
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -59,16 +80,37 @@ export function UsersTable() {
                     day: "numeric",
                   })}
                 </TableCell>
-                <TableCell>
-                  <Button variant="outline" size="sm">
-                    Delete
-                  </Button>
-                </TableCell>
+                {loggedInUser?.role === "ROOT" && (
+                  <TableCell>
+                    <Button
+                      onClick={() => {
+                        setSelectedUser(user);
+                        setIsChangePasswordModalOpen(true);
+                      }}
+                      variant="outline"
+                      size="sm"
+                    >
+                      Edit
+                    </Button>
+                    <Button
+                      onClick={() => handleDeleteUser(user.id)}
+                      variant="outline"
+                      size="sm"
+                    >
+                      Delete
+                    </Button>
+                  </TableCell>
+                )}
               </TableRow>
             ))}
           </TableBody>
         </Table>
       </div>
+      <ChangePasswordModal
+        isChangePasswordModalOpen={isChangePasswordModalOpen}
+        setIsChangePasswordModalOpen={setIsChangePasswordModalOpen}
+        user={selectedUser}
+      />
     </div>
   );
 }
