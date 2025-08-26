@@ -18,9 +18,9 @@ import { useTranslations } from "next-intl";
 interface FormErrors {
   name?: string[];
   email?: string[];
-  companyName?: string[];
-  productInterest?: string[];
-  estimatedVolume?: string[];
+  company_name?: string[];
+  interest?: string[];
+  order_volume?: string[];
   message?: string[];
 }
 const initialState = { message: "", errors: {} as FormErrors };
@@ -85,11 +85,11 @@ export default function InquiryForm() {
                 {t("fields.company.label")} *
               </label>
               <Input
-                name="companyName"
+                name="company_name"
                 placeholder={t("fields.company.placeholder")}
                 required
               />
-              {state.errors?.companyName && (
+              {state.errors?.company_name && (
                 <p className="text-red-500 text-sm">
                   {t("fields.company.required")}
                 </p>
@@ -99,7 +99,7 @@ export default function InquiryForm() {
               <label className="block font-medium">
                 {t("fields.product.label")} *
               </label>
-              <Select name="productInterest" required>
+              <Select name="interest" required>
                 <SelectTrigger>
                   <SelectValue placeholder={t("fields.product.placeholder")} />
                 </SelectTrigger>
@@ -118,7 +118,7 @@ export default function InquiryForm() {
                   </SelectItem>
                 </SelectContent>
               </Select>
-              {state.errors?.productInterest && (
+              {state.errors?.interest && (
                 <p className="text-red-500 text-sm">
                   {t("fields.product.required")}
                 </p>
@@ -129,11 +129,11 @@ export default function InquiryForm() {
                 {t("fields.order.label")} *
               </label>
               <Input
-                name="estimatedVolume"
+                name="order_volume"
                 placeholder={t("fields.order.placeholder")}
                 required
               />
-              {state.errors?.estimatedVolume && (
+              {state.errors?.order_volume && (
                 <p className="text-red-500 text-sm">
                   {t("fields.order.required")}
                 </p>

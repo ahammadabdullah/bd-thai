@@ -6,22 +6,25 @@ import prisma from "@/lib/db";
 import { slugFromTitle } from "@/lib/utils";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
+import { saveQuotation, sendEmail } from "./inquiry";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
   email: z.string().email("Please enter a valid email address."),
-  companyName: z.string().min(2, "Company name must be at least 2 characters."),
-  productInterest: z.string().min(1, "Please select a product interest."),
-  estimatedVolume: z.string().min(1, "Please enter estimated order volume."),
+  company_name: z
+    .string()
+    .min(2, "Company name must be at least 2 characters."),
+  interest: z.string().min(1, "Please select a product interest."),
+  order_volume: z.string().min(1, "Please enter estimated order volume."),
   message: z.string().min(10, "Message must be at least 10 characters."),
 });
 export async function submitInquiry(_: any, formData: FormData) {
   const validatedFields = formSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
-    companyName: formData.get("companyName"),
-    productInterest: formData.get("productInterest"),
-    estimatedVolume: formData.get("estimatedVolume"),
+    company_name: formData.get("company_name"),
+    interest: formData.get("interest"),
+    order_volume: formData.get("order_volume"),
     message: formData.get("message"),
   });
 
@@ -32,13 +35,20 @@ export async function submitInquiry(_: any, formData: FormData) {
     };
   }
 
-  // console log the validated fields
-  console.log(validatedFields.data);
-
-  return {
-    message: "Thank you for your inquiry. We'll get back to you soon!",
-    errors: {},
-  };
+  try {
+    // await sendEmail({ ...validatedFields.data, status: "PENDING" });
+    await saveQuotation({ ...validatedFields.data, status: "PENDING" });
+    return {
+      message: "Thank you for your inquiry. We'll get back to you soon!",
+      errors: {},
+    };
+  } catch (error) {
+    console.error("Error saving quotation:", error);
+    return {
+      message: "There was an error processing your inquiry.",
+      errors: {},
+    };
+  }
 }
 
 export async function credLogin(email: string, password: string) {
@@ -163,14 +173,11 @@ export async function deleteUser(id: string) {
   }
 }
 
-
-
-export async function getAllUsers()
-{
-  try{
+export async function getAllUsers() {
+  try {
     const users = await prisma.user.findMany();
     return users;
-  }catch(err){
+  } catch (err) {
     throw err;
   }
 }

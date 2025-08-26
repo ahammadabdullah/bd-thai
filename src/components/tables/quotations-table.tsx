@@ -11,57 +11,61 @@ import {
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useQuery } from "@tanstack/react-query";
+import { getAllQuotations } from "@/actions/inquiry";
+import { QuotationStatus } from "@prisma/client";
+import QuoteModal from "../modal/quote-modal";
+import { generatePDF } from "@/lib/utils";
 
-// Sample quotation data
-const initialQuotations = [
-  {
-    id: 1,
-    client: "Acme Corp",
-    email: "contact@acme.com",
-    product: "Website Development",
-    amount: "$5,000",
-    status: "Pending",
-    date: "2023-05-15",
-  },
-  {
-    id: 2,
-    client: "Globex Inc",
-    email: "info@globex.com",
-    product: "Mobile App",
-    amount: "$12,000",
-    status: "Approved",
-    date: "2023-06-22",
-  },
-  {
-    id: 3,
-    client: "Stark Industries",
-    email: "sales@stark.com",
-    product: "E-commerce Platform",
-    amount: "$8,500",
-    status: "Rejected",
-    date: "2023-07-10",
-  },
-];
+export interface QuotationType {
+  id: string;
+  createdAt: Date;
+  name: string;
+  email: string;
+  company_name: string;
+  interest: string;
+  order_volume: string;
+  message: string;
+  status: QuotationStatus;
+}
 
 export function QuotationsTable() {
-  const [quotations] = useState(initialQuotations);
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const [currentQuotation, setCurrentQuotation] =
+    useState<QuotationType | null>(null);
+  const { data: quotations, refetch } = useQuery({
+    queryKey: ["quotations"],
+    queryFn: async () => await getAllQuotations(),
+  });
 
-  const getStatusColor = (status: string) => {
+  const handleViewQuote = (quote: QuotationType) => {
+    setCurrentQuotation(quote);
+    setIsQuoteModalOpen(true);
+  };
+
+  const getStatusColor = (status: QuotationStatus) => {
     switch (status) {
-      case "Approved":
-        return "bg-green-100 text-green-800";
-      case "Rejected":
-        return "bg-red-100 text-red-800";
+      case "APPROVED":
+        return "bg-green-100 text-green-800 hover:bg-green-200";
+      case "REJECTED":
+        return "bg-red-100 text-red-800 hover:bg-red-200";
+      case "PENDING":
+        return "bg-yellow-100 text-yellow-800 hover:bg-yellow-200";
       default:
-        return "bg-yellow-100 text-yellow-800";
+        return "bg-yellow-100 text-yellow-800 hover:bg-yellow-200";
     }
+  };
+
+  const handleExportQuote = (quote: QuotationType) => {
+    // Implement your export logic here
+    generatePDF(quote);
+    console.log("Exporting quote:", quote);
   };
 
   return (
     <div>
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-xl font-semibold">Quotation Requests</h2>
-        <Button>Export</Button>
       </div>
 
       <div className="rounded-md border">
@@ -69,9 +73,9 @@ export function QuotationsTable() {
           <TableHeader>
             <TableRow>
               <TableHead>ID</TableHead>
-              <TableHead>Client</TableHead>
+              <TableHead>Name</TableHead>
               <TableHead>Email</TableHead>
-              <TableHead>Product</TableHead>
+              <TableHead>Company</TableHead>
               <TableHead>Amount</TableHead>
               <TableHead>Status</TableHead>
               <TableHead>Date</TableHead>
@@ -79,22 +83,41 @@ export function QuotationsTable() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {quotations.map((quote) => (
+            {quotations?.map((quote) => (
               <TableRow key={quote.id}>
-                <TableCell>{quote.id}</TableCell>
-                <TableCell className="font-medium">{quote.client}</TableCell>
+                <TableCell>{quote.id.slice(0, 6)}</TableCell>
+                <TableCell className="font-medium">{quote.name}</TableCell>
                 <TableCell>{quote.email}</TableCell>
-                <TableCell>{quote.product}</TableCell>
-                <TableCell>{quote.amount}</TableCell>
+                <TableCell>{quote.company_name}</TableCell>
+                <TableCell>{quote.order_volume}</TableCell>
                 <TableCell>
                   <Badge className={getStatusColor(quote.status)}>
-                    {quote.status}
+                    {quote.status.toLowerCase()}
                   </Badge>
                 </TableCell>
-                <TableCell>{quote.date}</TableCell>
+
                 <TableCell>
-                  <Button variant="outline" size="sm">
+                  {new Date(quote?.createdAt).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  })}
+                </TableCell>
+                <TableCell>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => handleViewQuote(quote)}
+                  >
                     View
+                  </Button>
+                  <Button
+                    onClick={() => handleExportQuote(quote)}
+                    variant="outline"
+                    className="ml-2"
+                    size="sm"
+                  >
+                    Export
                   </Button>
                 </TableCell>
               </TableRow>
@@ -102,6 +125,12 @@ export function QuotationsTable() {
           </TableBody>
         </Table>
       </div>
+      <QuoteModal
+        isQuoteModalOpen={isQuoteModalOpen}
+        setIsQuoteModalOpen={setIsQuoteModalOpen}
+        refetch={refetch}
+        quotation={currentQuotation}
+      />
     </div>
   );
 }

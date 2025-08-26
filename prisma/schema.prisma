@@ -17,17 +17,34 @@ model Blog {
     image       String
 }
 
-
 model User {
-    id          String   @id @default(auto()) @map("_id") @db.ObjectId
-    name        String
-    email      String   @unique
-    password    String
-    role        UserRole
-    createdAt   DateTime @default(now())
+    id        String   @id @default(auto()) @map("_id") @db.ObjectId
+    name      String
+    email     String   @unique
+    password  String
+    role      UserRole
+    createdAt DateTime @default(now())
+}
+
+model Quotation {
+    id           String          @id @default(auto()) @map("_id") @db.ObjectId
+    createdAt    DateTime        @default(now())
+    name         String
+    email        String
+    company_name String
+    interest     String
+    order_volume String
+    message      String
+    status       QuotationStatus
 }
 
 enum UserRole {
     ROOT
     ADMIN
+}
+
+enum QuotationStatus {
+    PENDING
+    APPROVED
+    REJECTED
 }
