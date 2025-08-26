@@ -8,7 +8,7 @@ import {
   getAllBlogSlugs,
   getBlogBySlug,
   getRelatedPostBySlug,
-} from "@/actions";
+} from "@/actions/blogs";
 import { getReadTime } from "@/lib/utils";
 import RelatedPosts from "@/components/blogs/related-posts";
 
