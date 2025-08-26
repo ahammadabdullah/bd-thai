@@ -13,13 +13,13 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useQuery } from "@tanstack/react-query";
 import { getAllQuotations } from "@/actions/inquiry";
-import { QuotationStatus } from "@prisma/client";
+import { Quotation, QuotationStatus } from "@prisma/client";
 import QuoteModal from "../modal/quote-modal";
 import { generatePDF } from "@/lib/utils";
 
 export interface QuotationType {
-  id: string;
-  createdAt: Date;
+  id?: string;
+  createdAt?: Date;
   name: string;
   email: string;
   company_name: string;
@@ -31,14 +31,15 @@ export interface QuotationType {
 
 export function QuotationsTable() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
-  const [currentQuotation, setCurrentQuotation] =
-    useState<QuotationType | null>(null);
+  const [currentQuotation, setCurrentQuotation] = useState<Quotation | null>(
+    null
+  );
   const { data: quotations, refetch } = useQuery({
     queryKey: ["quotations"],
     queryFn: async () => await getAllQuotations(),
   });
 
-  const handleViewQuote = (quote: QuotationType) => {
+  const handleViewQuote = (quote: Quotation) => {
     setCurrentQuotation(quote);
     setIsQuoteModalOpen(true);
   };
@@ -56,7 +57,7 @@ export function QuotationsTable() {
     }
   };
 
-  const handleExportQuote = (quote: QuotationType) => {
+  const handleExportQuote = (quote: Quotation) => {
     generatePDF(quote);
   };
 

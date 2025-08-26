@@ -3,6 +3,7 @@ import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
+import { Quotation } from "@prisma/client";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -15,7 +16,7 @@ export function slugFromTitle(title: string) {
     .replace(/[^\w-]+/g, "");
 }
 
-export const generatePDF = (quote: QuotationType) => {
+export const generatePDF = (quote: Quotation) => {
   const doc = new jsPDF();
   doc.setFontSize(22);
   doc.setTextColor(44, 62, 80);
