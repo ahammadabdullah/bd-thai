@@ -85,9 +85,6 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem>Profile</DropdownMenuItem>
-              <DropdownMenuItem>Settings</DropdownMenuItem>
-              <DropdownMenuSeparator />
               <DropdownMenuItem>
                 <span
                   onClick={handleLogOut}
