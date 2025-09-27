@@ -12,6 +12,7 @@ import Image from "next/image";
 import Feature from "./_components/feature";
 import { CertificationsCompliance } from "./manufacturing/_components/certifications-compliance";
 import SmoothScrollLink from "@/components/common/scroll";
+import Facilities from "./contract/_components/facilities";
 
 export default function Home({}) {
   const t = useTranslations("home");
@@ -123,6 +124,9 @@ export default function Home({}) {
           </Button>
         </div>
       </section>
+      <div className="max-w-7xl mx-auto px-6 py-10">
+        <Facilities />
+      </div>
     </>
   );
 }

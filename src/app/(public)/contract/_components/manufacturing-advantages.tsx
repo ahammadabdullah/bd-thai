@@ -1,11 +1,6 @@
 import { Clock, Users, FlaskRoundIcon as Flask, Shield } from "lucide-react";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
-
-import facility_1 from "@/assets/contracts/facility_1.jpg";
-import facility_2 from "@/assets/contracts/facility_2.png";
-import facility_3 from "@/assets/contracts/facility_3.png";
-import facility_4 from "@/assets/contracts/facility_4.jpg";
+import Facilities from "./facilities";
 
 export function ManufacturingAdvantages() {
   const t = useTranslations("contract.advantages");
@@ -31,7 +26,6 @@ export function ManufacturingAdvantages() {
       icon: Shield,
     },
   ];
-  const facility_images = [facility_1, facility_2, facility_3, facility_4];
   return (
     <section className="py-24 bg-muted">
       <div className="max-w-7xl mx-auto px-6">
@@ -60,23 +54,7 @@ export function ManufacturingAdvantages() {
           ))}
         </div>
 
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <div className="p-6 border-b border-gray-100">
-            <h3 className="text-xl font-semibold">{t("facilities")}</h3>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
-            {facility_images.map((item, idx) => (
-              <div key={idx} className="relative aspect-square">
-                <Image
-                  src={item}
-                  alt="Manufacturing facility"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+        <Facilities />
       </div>
     </section>
   );
