@@ -8,11 +8,7 @@ const BeveragesPage = () => {
   const t = useTranslations("beverages");
   return (
     <div>
-      <Hero
-        title={t("hero.title")}
-        subtitle={t("hero.description")}
-        image="https://images.unsplash.com/photo-1513828742140-ccaa28f3eda0?ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80"
-      />
+      <Hero title={t("hero.title")} subtitle={t("hero.description")} />
       {/* <section className="py-24 bg-muted">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-16">

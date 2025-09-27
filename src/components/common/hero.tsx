@@ -1,5 +1,4 @@
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import React from "react";
 import { Button } from "../ui/button";
 import SmoothScrollLink from "./scroll";
@@ -8,10 +7,9 @@ import heroFallback from "@/assets/fallback.png";
 interface HeroProps {
   title: string;
   subtitle: string;
-  image: string;
   button?: string;
 }
-const Hero = ({ title, subtitle, image, button }: HeroProps) => {
+const Hero = ({ title, subtitle, button }: HeroProps) => {
   const t = useTranslations("home");
   const videoSrc =
     "https://res.cloudinary.com/dyli16gvr/video/upload/f_mp4,vc_h264/qqxqte5llbxd46vx8cwg.mp4";
