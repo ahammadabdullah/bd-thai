@@ -14,7 +14,7 @@ interface HeroProps {
 const Hero = ({ title, subtitle, image, button }: HeroProps) => {
   const t = useTranslations("home");
   const videoSrc =
-    "https://res.cloudinary.com/dyli16gvr/video/upload/v1758972566/qqxqte5llbxd46vx8cwg.mp4";
+    "https://res.cloudinary.com/dyli16gvr/video/upload/f_mp4,vc_h264/qqxqte5llbxd46vx8cwg.mp4";
   return (
     <section className="relative h-screen flex items-center justify-center">
       {/* <div className="absolute inset-0">

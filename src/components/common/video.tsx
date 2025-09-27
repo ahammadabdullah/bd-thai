@@ -1,6 +1,6 @@
 import fallback from "@/assets/fallback.png";
 const src =
-  "https://res.cloudinary.com/dyli16gvr/video/upload/v1758972566/qqxqte5llbxd46vx8cwg.mp4";
+  "https://res.cloudinary.com/dyli16gvr/video/upload/f_mp4,vc_h264/qqxqte5llbxd46vx8cwg.mp4";
 
 const Video = () => (
   <div
