@@ -83,16 +83,17 @@ export function Navbar() {
                   ))}
                 </div>
 
-                <div className="mt-auto pt-6 pb-8 border-t flex flex-col space-y-4">
+                <div className="mt-auto pt-6 pb-8 border-t flex flex-col justify-center items-center space-y-4">
                   <LanguageSwitcher />
-                  <Button className="w-full">{t("quote")}</Button>
+                  <SmoothScrollLink href="#inquiry-form">
+                    <Button>{t("quote")}</Button>
+                  </SmoothScrollLink>
                 </div>
               </div>
             </SheetContent>
           </Sheet>
         </div>
 
-        {/* Your existing navbar code */}
         <div className="flex lg:flex-1">
           <Link href={`/`} className="-m-1.5 p-1.5 text-2xl font-bold">
             BD Thai Food
