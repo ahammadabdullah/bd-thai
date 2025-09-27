@@ -10,6 +10,8 @@ import {
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Feature from "./_components/feature";
+import { CertificationsCompliance } from "./manufacturing/_components/certifications-compliance";
+import SmoothScrollLink from "@/components/common/scroll";
 
 export default function Home({}) {
   const t = useTranslations("home");
@@ -103,7 +105,7 @@ export default function Home({}) {
           </div>
         </div>
       </section> */}
-
+      <CertificationsCompliance />
       {/* CTA Section */}
       <section className="py-24 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-6 text-center">
@@ -115,7 +117,9 @@ export default function Home({}) {
             bring your product ideas to life.
           </p>
           <Button size="lg" variant="outline" className="text-primary ">
-            Contact Us Now
+            <SmoothScrollLink href="#inquiry-form">
+              Contact Us Now
+            </SmoothScrollLink>
           </Button>
         </div>
       </section>
