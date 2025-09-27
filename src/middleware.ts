@@ -15,7 +15,7 @@ export async function middleware(request: NextRequest) {
     "/dashboard/users",
     "/dashboard/quotations",
   ];
-
+  // console.log(session?.user);
   if (isLoggedIn && pathname === "/login") {
     return NextResponse.redirect(new URL("/dashboard", request.url));
   }

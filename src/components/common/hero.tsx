@@ -3,6 +3,8 @@ import Image from "next/image";
 import React from "react";
 import { Button } from "../ui/button";
 import SmoothScrollLink from "./scroll";
+import heroFallback from "@/assets/fallback.png";
+
 interface HeroProps {
   title: string;
   subtitle: string;
@@ -11,10 +13,11 @@ interface HeroProps {
 }
 const Hero = ({ title, subtitle, image, button }: HeroProps) => {
   const t = useTranslations("home");
-
+  const videoSrc =
+    "https://res.cloudinary.com/dyli16gvr/video/upload/v1758972566/qqxqte5llbxd46vx8cwg.mp4";
   return (
     <section className="relative h-screen flex items-center justify-center">
-      <div className="absolute inset-0">
+      {/* <div className="absolute inset-0">
         <Image
           src={
             image ||
@@ -26,16 +29,27 @@ const Hero = ({ title, subtitle, image, button }: HeroProps) => {
           priority
         />
         <div className="absolute inset-0 bg-black/50" />
-      </div>
+      </div> */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src={videoSrc}
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster={heroFallback.src}
+      />
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/50" />
+
       <div className="relative z-10 text-center text-white px-6">
         <h1 className="text-5xl font-bold mb-6">{title}</h1>
         <p className="text-xl mb-8 max-w-3xl mx-auto">{subtitle}</p>
         <div className="flex gap-4 justify-center">
-          {/* <Link href={"#inquiry-form"}> */}
           <SmoothScrollLink href="#inquiry-form">
             <Button size="lg">{button || t("hero.cta.quote")}</Button>
           </SmoothScrollLink>
-          {/* </Link> */}
         </div>
       </div>
     </section>
