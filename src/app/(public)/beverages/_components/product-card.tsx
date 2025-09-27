@@ -6,6 +6,7 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
 import { Droplet, Zap, FlaskRoundIcon } from "lucide-react";
+import { useRef } from "react";
 
 const iconMap: Record<string, React.ElementType> = {
   droplet: Droplet,
@@ -27,6 +28,8 @@ interface ProductCardProps {
 
 const ProductCard = ({ category, index }: ProductCardProps) => {
   const Icon = iconMap[category.icon.toLowerCase()];
+  const swiperRef = useRef<any>(null);
+
   return (
     <div
       key={index}
@@ -42,16 +45,22 @@ const ProductCard = ({ category, index }: ProductCardProps) => {
           autoplay={{ delay: 2000 }}
           modules={[Autoplay]}
           className="h-full"
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
         >
           {category.images.map((img, i) => (
             <SwiperSlide key={i}>
-              <Image
-                src={img}
-                alt={`${category.title} ${i + 1}`}
-                fill
-                className="object-cover"
-                // className="object-contain bg-white"
-              />
+              <div
+                className="w-full h-full relative overflow-hidden group bg-white"
+                onMouseEnter={() => swiperRef.current?.autoplay.stop()}
+                onMouseLeave={() => swiperRef.current?.autoplay.start()}
+              >
+                <Image
+                  src={img}
+                  alt={`${category.title} ${i + 1}`}
+                  fill
+                  className="object-cover transition-all duration-500 ease-in-out group-hover:object-contain"
+                />
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
