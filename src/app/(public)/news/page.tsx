@@ -9,11 +9,7 @@ export default function News() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <Hero
-        title={t("hero.title")}
-        subtitle={t("hero.description")}
-        image="https://images.unsplash.com/photo-1513828742140-ccaa28f3eda0?ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80"
-      />
+      <Hero title={t("hero.title")} subtitle={t("hero.description")} />
       {/* Featured News */}
       <LatestsPosts />
 
