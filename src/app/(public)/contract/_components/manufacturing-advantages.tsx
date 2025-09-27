@@ -2,10 +2,10 @@ import { Clock, Users, FlaskRoundIcon as Flask, Shield } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-import facility_1 from "@/assets/facility_1.jpg";
-import facility_2 from "@/assets/facility_2.jpg";
-import facility_3 from "@/assets/facility_3.jpg";
-import facility_4 from "@/assets/facility_4.jpg";
+import facility_1 from "@/assets/contracts/facility_1.jpg";
+import facility_2 from "@/assets/contracts/facility_2.png";
+import facility_3 from "@/assets/contracts/facility_3.png";
+import facility_4 from "@/assets/contracts/facility_4.jpg";
 
 export function ManufacturingAdvantages() {
   const t = useTranslations("contract.advantages");
