@@ -24,20 +24,6 @@ export function Footer() {
           <div>
             <h2 className="text-2xl font-bold text-white">{t("company")}</h2>
             <p className="mt-4 text-sm">{t("companyDescription")}</p>
-            <div className="mt-6 flex space-x-4">
-              <Link href="#" className="hover:text-white">
-                <Facebook className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="hover:text-white">
-                <Twitter className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="hover:text-white">
-                <Instagram className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="hover:text-white">
-                <Linkedin className="h-5 w-5" />
-              </Link>
-            </div>
           </div>
           <div>
             <h3 className="text-lg font-semibold text-white">
