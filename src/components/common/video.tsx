@@ -14,6 +14,7 @@ const Video = () => (
       loop
       playsInline
       poster={fallback.src}
+      {...{ playsinline: true, "webkit-playsinline": true }}
     />
     <div className="absolute inset-0 bg-black/30" />
   </div>
