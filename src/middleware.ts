@@ -1,21 +1,23 @@
-import NextAuth, { NextAuthConfig } from "next-auth";
+import { getToken } from "next-auth/jwt";
 import { NextResponse, NextRequest } from "next/server";
-import { authConfig } from "./auth/auth.config";
-
-const { auth } = NextAuth(authConfig as NextAuthConfig);
 
 export async function middleware(request: NextRequest) {
-  const { nextUrl } = request;
-  const { pathname } = nextUrl;
-  const session = await auth();
-  const isLoggedIn = !!session?.user;
+  const token = await getToken({
+    req: request,
+    secret: process.env.AUTH_SECRET,
+  });
+
+  const isLoggedIn = !!token;
+
   const privateRoutes = [
     "/dashboard",
     "/dashboard/blogs",
     "/dashboard/users",
     "/dashboard/quotations",
   ];
-  // console.log(session?.user);
+
+  const { pathname } = request.nextUrl;
+
   if (isLoggedIn && pathname === "/login") {
     return NextResponse.redirect(new URL("/dashboard", request.url));
   }
