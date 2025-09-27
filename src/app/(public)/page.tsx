@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import Feature from "./_components/feature";
 
 export default function Home({}) {
   const t = useTranslations("home");
@@ -50,60 +51,7 @@ export default function Home({}) {
         image="https://images.unsplash.com/photo-1513828742140-ccaa28f3eda0?ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80"
       />
       {/* Features Section */}
-
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-4xl font-bold">{t("features.title")}</h2>
-              <p className="text-gray-600 leading-relaxed">
-                {t("features.description")}
-              </p>
-              <ul className="space-y-4">
-                {features.map((feature, index) => (
-                  <li key={index} className="flex items-start">
-                    <feature.icon className="h-6 w-6 text-primary mr-3 mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="font-semibold">{feature.title}</h3>
-                      <p className="text-gray-600">{feature.description}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <Image
-                src="https://images.unsplash.com/photo-1563213126-a4273aed2016?q=80&w=800&auto=format&fit=crop"
-                alt="Pharmaceutical manufacturing"
-                width={400}
-                height={300}
-                className="rounded-lg object-cover w-full h-full"
-              />
-              <Image
-                src="https://images.unsplash.com/photo-1628595351029-c2bf17511435?q=80&w=800&auto=format&fit=crop"
-                alt="Quality control in pharma"
-                width={400}
-                height={300}
-                className="rounded-lg object-cover w-full h-full"
-              />
-              <Image
-                src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=800&auto=format&fit=crop"
-                alt="Research and development"
-                width={400}
-                height={300}
-                className="rounded-lg object-cover w-full h-full"
-              />
-              <Image
-                src="https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=800&auto=format&fit=crop"
-                alt="Pharmaceutical products"
-                width={400}
-                height={300}
-                className="rounded-lg object-cover w-full h-full"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <Feature />
       {/* Products Preview */}
       {/* <section className="py-24">
         <div className="max-w-7xl mx-auto px-6">
