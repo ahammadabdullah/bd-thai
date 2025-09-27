@@ -16,19 +16,10 @@ import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "./language-switcher";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import SmoothScrollLink from "../common/scroll";
-// import { useEffect } from "react";
 
 export function Navbar() {
   const pathname = usePathname();
-  // const [isScrolled, setIsScrolled] = React.useState(false);
   const t = useTranslations("nav");
-  //  useEffect(() => {
-  //     const handleScroll = () => {
-  //       setIsScrolled(window.scrollY > 0);
-  //     };
-  //     window.addEventListener("scroll", handleScroll);
-  //     return () => window.removeEventListener("scroll", handleScroll);
-  //   }, []);
 
   const navigation = [
     { name: t("home"), href: `/` },
