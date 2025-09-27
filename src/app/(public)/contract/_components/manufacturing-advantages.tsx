@@ -1,6 +1,7 @@
 import { Clock, Users, FlaskRoundIcon as Flask, Shield } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Facilities from "./facilities";
+import Video from "@/components/common/video";
 
 export function ManufacturingAdvantages() {
   const t = useTranslations("contract.advantages");
@@ -55,6 +56,7 @@ export function ManufacturingAdvantages() {
         </div>
 
         <Facilities />
+        <Video />
       </div>
     </section>
   );

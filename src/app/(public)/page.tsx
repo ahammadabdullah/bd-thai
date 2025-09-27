@@ -13,6 +13,7 @@ import Feature from "./_components/feature";
 import { CertificationsCompliance } from "./manufacturing/_components/certifications-compliance";
 import SmoothScrollLink from "@/components/common/scroll";
 import Facilities from "./contract/_components/facilities";
+import Video from "@/components/common/video";
 
 export default function Home({}) {
   const t = useTranslations("home");
@@ -126,6 +127,7 @@ export default function Home({}) {
       </section>
       <div className="max-w-7xl mx-auto px-6 py-10">
         <Facilities />
+        <Video />
       </div>
     </>
   );
