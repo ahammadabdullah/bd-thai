@@ -54,8 +54,10 @@ export async function credLogin(email: string, password: string) {
       password,
       redirect: false,
     });
+    console.log("logging user in", response);
     return response;
   } catch (err) {
+    console.log("error while loggin ", err);
     throw err;
   }
 }
