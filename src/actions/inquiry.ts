@@ -7,12 +7,13 @@ import { QuotationStatus } from "@prisma/client";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const email = process.env.ADMIN_NOTIFICATION_EMAIL;
 
 export async function sendEmail(quotation: QuotationType) {
   try {
     const { data, error } = await resend.emails.send({
       from: "BD Thai Food <noreply@bdthaifood.com>",
-      to: ["alcahammad@gmail.com"],
+      to: [email as string],
       subject: "New Quotation Request",
       react: QuotationTemplate({ quotation }),
     });

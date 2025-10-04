@@ -22,10 +22,12 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL("/dashboard", request.url));
   }
 
-  if (!isLoggedIn && privateRoutes.includes(pathname)) {
+  if (
+    !isLoggedIn &&
+    privateRoutes.some((route) => pathname.startsWith(route))
+  ) {
     return NextResponse.redirect(new URL("/login", request.url));
   }
-
   return NextResponse.next();
 }
 
