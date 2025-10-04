@@ -44,9 +44,7 @@ function CreateBlogModal({
   const [image, setImage] = useState<File | null>(null);
 
   const { startUpload } = useUploadThing("imageUploader", {
-    onUploadError(err) {
-      console.log(err, "from create blog modal");
-    },
+    onUploadError(err) {},
     onClientUploadComplete(res) {
       const newBlogWithImage = { ...newBlog, imageUrl: res[0].ufsUrl };
       createBlog(newBlogWithImage);

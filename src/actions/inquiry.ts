@@ -1,11 +1,28 @@
 "use server";
 
+import QuotationTemplate from "@/components/email/quotation";
 import { QuotationType } from "@/components/tables/quotations-table";
 import prisma from "@/lib/db";
 import { QuotationStatus } from "@prisma/client";
+import { Resend } from "resend";
 
-export async function sendEmail(data: QuotationType) {
-  // Implementation for sending email
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+export async function sendEmail(quotation: QuotationType) {
+  try {
+    const { data, error } = await resend.emails.send({
+      from: "BD Thai Food <noreply@bdthaifood.com>",
+      to: ["alcahammad@gmail.com"],
+      subject: "New Quotation Request",
+      react: QuotationTemplate({ quotation }),
+    });
+    if (error) {
+      throw new Error(error.message);
+    }
+    return { success: true, data };
+  } catch (err: any) {
+    return { success: false, error: err.message };
+  }
 }
 
 export async function saveQuotation(data: QuotationType) {

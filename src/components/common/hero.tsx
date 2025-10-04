@@ -15,26 +15,13 @@ const Hero = ({ title, subtitle, button }: HeroProps) => {
     "https://res.cloudinary.com/dyli16gvr/video/upload/f_mp4,vc_h264/qqxqte5llbxd46vx8cwg.mp4";
   return (
     <section className="relative h-screen flex items-center justify-center">
-      {/* <div className="absolute inset-0">
-        <Image
-          src={
-            image ||
-            "https://images.unsplash.com/photo-1513828742140-ccaa28f3eda0?ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80"
-          }
-          alt="Factory Production Line"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/50" />
-      </div> */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
         src={videoSrc}
-        autoPlay
+        autoPlay={true}
         muted
         loop
-        playsInline
+        playsInline={true}
         poster={heroFallback.src}
       />
 

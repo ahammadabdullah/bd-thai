@@ -9,12 +9,12 @@ const Video = () => (
     <video
       src={src}
       className="w-full h-full object-cover rounded-md"
-      autoPlay
+      autoPlay={true}
       muted
       loop
-      playsInline
+      playsInline={true}
+      suppressHydrationWarning
       poster={fallback.src}
-      {...{ playsinline: true, "webkit-playsinline": true, autoplay: true }}
     />
     <div className="absolute inset-0 bg-black/30" />
   </div>

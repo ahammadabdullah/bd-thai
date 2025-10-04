@@ -1,9 +1,6 @@
 "use server";
 
 import { signIn, signOut } from "@/auth/auth";
-import { BlogData } from "@/components/modal/create-blog-modal";
-import prisma from "@/lib/db";
-import { slugFromTitle } from "@/lib/utils";
 import { z } from "zod";
 import { saveQuotation, sendEmail } from "./inquiry";
 
@@ -30,13 +27,13 @@ export async function submitInquiry(_: any, formData: FormData) {
   if (!validatedFields.success) {
     return {
       errors: validatedFields.error.flatten().fieldErrors,
-      message: "Please fix the errors below.",
+      message: "Please fix the errors.",
     };
   }
 
   try {
-    // await sendEmail({ ...validatedFields.data, status: "PENDING" });
     await saveQuotation({ ...validatedFields.data, status: "PENDING" });
+    await sendEmail({ ...validatedFields.data, status: "PENDING" });
     return {
       message: "Thank you for your inquiry. We'll get back to you soon!",
       errors: {},

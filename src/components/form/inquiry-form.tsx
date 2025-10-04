@@ -1,6 +1,5 @@
 "use client";
 
-import { useFormStatus } from "react-dom";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -14,6 +13,7 @@ import { submitInquiry } from "@/actions";
 import { Button } from "../ui/button";
 import { useActionState } from "react";
 import { useTranslations } from "next-intl";
+import { Loader2 } from "lucide-react";
 
 interface FormErrors {
   name?: string[];
@@ -25,19 +25,20 @@ interface FormErrors {
 }
 const initialState = { message: "", errors: {} as FormErrors };
 
-function SubmitButton() {
-  const { pending } = useFormStatus();
+function SubmitButton({ pending }: { pending: boolean }) {
   const t = useTranslations("form");
 
   return (
     <Button type="submit" className="w-full" disabled={pending}>
-      {pending ? t("submitting") : t("submit")}
+      {pending ? <Loader2 className="animate-spin w-4" /> : t("submit")}
     </Button>
   );
 }
-
 export default function InquiryForm() {
-  const [state, formAction] = useActionState(submitInquiry, initialState);
+  const [state, formAction, pending] = useActionState(
+    submitInquiry,
+    initialState
+  );
   const t = useTranslations("form");
 
   return (
@@ -154,7 +155,7 @@ export default function InquiryForm() {
                 </p>
               )}
             </div>
-            <SubmitButton />
+            <SubmitButton pending={pending} />
             {state.message && (
               <p
                 className={`mt-4 text-sm ${
