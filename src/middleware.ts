@@ -4,6 +4,10 @@ import { NextResponse, NextRequest } from "next/server";
 export async function middleware(request: NextRequest) {
   const token = await getToken({
     req: request,
+    cookieName:
+      process.env.VERCEL_ENV === "development"
+        ? "authjs.session-token"
+        : "__Secure-authjs.session-token",
     secret: process.env.AUTH_SECRET,
   });
 
