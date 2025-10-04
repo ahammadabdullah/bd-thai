@@ -7,6 +7,8 @@ export async function middleware(request: NextRequest) {
     secret: process.env.AUTH_SECRET,
   });
 
+  console.log("token---", token, "token---");
+  console.log("auth secret", process.env.AUTH_SECRET);
   const isLoggedIn = !!token;
 
   const privateRoutes = [
