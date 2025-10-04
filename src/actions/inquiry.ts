@@ -1,6 +1,6 @@
 "use server";
 
-import QuotationTemplate from "@/components/email/quotation";
+import QuotationTemplate from "@/components/email/quotation-template";
 import { QuotationType } from "@/components/tables/quotations-table";
 import { notificationEmails } from "@/lib";
 import prisma from "@/lib/db";
@@ -13,8 +13,9 @@ export async function sendEmail(quotation: QuotationType) {
   try {
     const { data, error } = await resend.emails.send({
       from: "BD Thai Food <noreply@bdthaifood.com>",
-      to: notificationEmails,
-      subject: "New Quotation Request",
+      to: quotation.email,
+      bcc: notificationEmails,
+      subject: "We Received Your Quotation Request",
       react: QuotationTemplate({ quotation }),
     });
     if (error) {
